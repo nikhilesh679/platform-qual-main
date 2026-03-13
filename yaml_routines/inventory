@@ -1,0 +1,2 @@
+[my_host]
+10.0.115.93 ansible_host=10.0.115.93 ansible_connection=ssh ansible_ssh_user=adminstaging ansible_ssh_pass="RubrikAdminPassword"

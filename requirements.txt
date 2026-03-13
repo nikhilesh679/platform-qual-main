@@ -1,0 +1,7 @@
+ansible_runner~=2.2.0
+click~=6.7
+paramiko~=2.10.4
+PyYAML~=6.0
+requests~=2.18.4
+tqdm~=4.64.0
+urllib3~=1.22

@@ -1,0 +1,20 @@
+{
+    "TPM": {
+        "InterfaceType" : "TPM1_2",
+        "State": "Enabled"
+    },
+    "USERS": [
+        {
+            "Enabled": true,
+            "Id": "1",
+            "RoleId": "admin",
+            "UserName": "admin"
+        },
+        {
+            "Enabled": true,
+            "Id": "3",
+            "RoleId": "admin",
+            "UserName": "RUBRIK"
+        }
+    ]
+}

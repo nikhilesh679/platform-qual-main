@@ -1,0 +1,77 @@
+---
+- hosts: all 
+  connection: local
+  name: Get Fimrware Inventory
+  gather_facts: False
+
+#run this palybook using 
+#ansible-playbook -i <your_hosts_ipmi> redfish_gather_info.yml
+
+  collections:
+    - community.general
+
+  tasks:
+  - name: Get System, Accounts inventory
+    redfish_info:
+       category: ["Systems", "Accounts"]
+       #category: ["Accounts"]
+       baseuri:   "{{ inventory_hostname}}"
+       username: "{{ user }}"
+       password:  "{{ pass }}"
+    register: result_sau
+
+    #  - name: Accounts Result[fetched result]
+    #debug: 
+    #   msg: "{{ result_sau.redfish_facts.user.entries }}"
+
+
+  - name: Accounts Info [fetched result]
+    debug: 
+       msg: "{{ item }}"
+    loop: "{{ result_sau.redfish_facts.user.entries }}"
+    when: item.UserName != ""
+
+  - name: System Info[fetched result]
+    debug: 
+       msg: "{{ result_sau.redfish_facts.system}}"
+
+  - name: Get CPU inventory
+    redfish_info:
+        category: Systems
+        command: GetCpuInventory 
+        #command: GetCpuInventory,GetBiosAttributes 
+        baseuri:  "{{ inventory_hostname}}" 
+        username: "{{ user }}"
+        password:  "{{ pass }}"
+    register: result_cpu
+
+  - name: System Inventory Result[fetched result]
+    debug: 
+          msg: "{{ result_cpu.redfish_facts }}"
+
+  - name: Get Physical Disks
+    redfish_info:
+          category: Systems
+          command: GetDiskInventory
+          baseuri: "{{ inventory_hostname }}"
+          username: "{{ user }}"
+          password: "{{pass }}"
+    register: disk_result
+
+  - name: Print Disk Info
+    debug:
+        msg: "{{ disk_result.redfish_facts.disk.entries }}"
+
+  - name: Get NIC inventory
+    redfish_info:
+        category: Systems
+        command: GetNicInventory 
+        #command: GetCpuInventory,GetBiosAttributes 
+        baseuri:  "{{ inventory_hostname}}" 
+        username: "{{ user }}"
+        password:  "{{ pass }}"
+    register: result_nic
+
+  - name: System NIC Inventory Result[fetched result]
+    debug: 
+          msg: "{{ result_nic.redfish_facts.nic.entries }}"

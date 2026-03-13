@@ -1,0 +1,5 @@
+[ipmi_hosts:vars]
+user=admin
+pass=RubrikAdminPassw
+[ipmi_hosts]
+10.1.44.111 ansible_ssh_user=admin ansible_ssh_pass=RubrikAdminPassw

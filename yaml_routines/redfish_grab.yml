@@ -1,0 +1,32 @@
+---
+- hosts: ipmi_hosts
+  connection: local
+  name: Get Fimrware Inventory
+  gather_facts: False
+
+  vars:
+    datatype: SystemInventory
+
+  tasks:
+
+  - name: Define output file
+    include_tasks: create_output_file.yml
+
+  - name: Get Systems inventory
+    redfish_info:
+      category: ["Accounts", "Chassis", "Manager", "Sessions", "Systems", "Update"]
+      command: all
+      baseuri: "{{ inventory_hostname }}"
+      username: "{{ user }}"
+      password: "{{ pass }}"
+    register: result
+  
+  - name: Copy result info to output file
+    copy:
+      content: "{{ result.redfish_facts | to_nice_json }}"
+      dest: "{{ template }}.json"
+  
+  # - name: Save for code
+  #   set_fact:
+  #     result: "{{ result1.redfish_facts }}"
+  #     cacheable: yes

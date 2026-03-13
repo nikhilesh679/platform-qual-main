@@ -1,0 +1,99 @@
+
+ipmi_pass:
+  pre_bootstrap: ADMIN
+  post_bootstrap: RubrikAdminPassw
+
+install_pass: rubrik
+
+pxe_mfg_build: http://cdm-builds.corp.rubrik.com/job/Build_CDM_Disk_Image_9.5/478/artifact/rubrik-image-9.5.0-p2-36016.tar.gz
+upgrade_dest: http://cdm-builds.corp.rubrik.com/job/Build_CDM_Disk_Image_9.4/1091/artifact/rubrik-image-9.4.3-31178.tar.gz
+add_node:
+- hostname: RDL6520G3HP2Q3CNWS300216006V
+  physical: true
+  # Replacing pxeserver with pxeserverip to remove host_vars dependency.
+  # devpxe-10-16-28-x's ip address is 10.16.28.15
+  pxeserverip: 10.1.44.4
+  pxe: true
+  ipmi:
+    address: 10.1.44.127
+    gateway: 10.1.44.1
+    netmask: 255.255.252.0
+    # Reserved DHCP Address.
+    # Check out deployment/ansible/host_vars/devpxe-colo14/main.yml
+    reserved_dhcp_address: 10.1.45.29
+    default_admin_user: root
+  ipv4:
+    type: static
+    address: 10.0.16.203
+    netmask: 255.255.0.0
+    gateway: 10.0.0.255
+  mac_address_0: "10:70:FD:8E:0D:50"
+  mac_address_1: "10:70:FD:8E:0D:51"
+  ipv6:
+    interface: bond0
+    address: fe80::1270:fdff:fe8e:d51
+
+decommission_node:
+- hostname: RDL6520G3HP2Q3CNWS300216006V
+  physical: true
+  # Replacing pxeserver with pxeserverip to remove host_vars dependency.
+  # devpxe-10-16-28-x's ip address is 10.16.28.15
+  pxeserverip: 10.1.44.4
+  pxe: true
+  ipmi:
+    address: 10.1.44.127
+    gateway: 10.1.44.1
+    netmask: 255.255.252.0
+    # Reserved DHCP Address.
+    # Check out deployment/ansible/host_vars/devpxe-colo14/main.yml
+    reserved_dhcp_address: 10.1.45.29
+    default_admin_user: root
+  ipv4:
+    type: static
+    address: 10.0.16.203
+    netmask: 255.255.0.0
+    gateway: 10.0.0.255
+  mac_address_0: "10:70:FD:8E:0D:50"
+  mac_address_1: "10:70:FD:8E:0D:51"
+  ipv6:
+    interface: bond0
+    address: fe80::1270:fdff:fe8e:d51
+
+entitlement_ids:
+  RDL6420: 5501W000002w1WT
+  RHPDL360: 5501W000003Y4hK
+  RC220: 5501W000002yuGX
+  RC240: 5506f000004H1Kx
+  RHPDL380: 5501W000007iPn3
+  RDL740: 5501W000006IgTh
+
+kmip_data:
+  server_ip: 10.0.123.151
+  server_port: 5697
+  client_username: rubrik-testing
+  client_password: rubrik-shield
+  cert_name: KMIP Server
+  cert_path: deployment/certs/kmip_testing_server1.crt
+  cert_text: |
+    -----BEGIN CERTIFICATE-----
+    MIIDqjCCApICCQD9iyO0iOlxtzANBgkqhkiG9w0BAQsFADCBljELMAkGA1UEBhMC
+    VVMxEzARBgNVBAgMCkNhbGlmb3JuaWExEjAQBgNVBAcMCVBhbG8gQWx0bzEPMA0G
+    A1UECgwGUnVicmlrMRQwEgYDVQQLDAtFbmdpbmVlcmluZzEVMBMGA1UEAwwMMTAu
+    MC4xMjMuMTUxMSAwHgYJKoZIhvcNAQkBFhFzaGllbGRAcnVicmlrLmNvbTAeFw0x
+    OTA0MjIyMTQ0MTVaFw0yOTA0MjEyMTQ0MTVaMIGWMQswCQYDVQQGEwJVUzETMBEG
+    A1UECAwKQ2FsaWZvcm5pYTESMBAGA1UEBwwJUGFsbyBBbHRvMQ8wDQYDVQQKDAZS
+    dWJyaWsxFDASBgNVBAsMC0VuZ2luZWVyaW5nMRUwEwYDVQQDDAwxMC4wLjEyMy4x
+    NTExIDAeBgkqhkiG9w0BCQEWEXNoaWVsZEBydWJyaWsuY29tMIIBIjANBgkqhkiG
+    9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2LF2iIZDH8JNafvzCU+rAtMKN0CrlTdWKicy
+    uw7VaJM1CwL/LCM+47rHTGPhg1r3cePd2pskyeV+UaWGzoEUa57q2yM50RCxhACm
+    0kQWbjKlJ1czobaiK1WwdcPXKf+Zb0sUw/OoeAyxs+8cL4GIJlMqt8xd1Gd5CJxK
+    5Qm+kA6Zhk5dkHJBkm7+6M/muvoLmEyyJUJETbZm3kEoKsgOwGXsyb5gsxU3Nkr7
+    pHLQ0d9pXDZHPVHa9oDpvOpjGVqOMGxz8u2EQ50dVXwd8j+Hn9OsU5qIcG4bzvYA
+    zlDnPz/wJhII1fAqqNcrCtByKSxphXvqrw11B2HZIZZ/YbOXzwIDAQABMA0GCSqG
+    SIb3DQEBCwUAA4IBAQBKZuFoyyQn070j2RJxndrWxRJNf27n2mCfrDvb7wOfMvml
+    xIpyQM+Z4dR3Kz6S8qOWNtO9pm07scWRN9Z3aEaVaZeK4E6wbsVwJ64lLYd48CfV
+    OX8wXFu6NcHRLVu7jNA0CBixZUB/ST6uyM96MYffbSTNtqwdK9TXGOEsom4zE4qV
+    fjEP867oX8DE1ujGV37FuON8qfGKQHt6LwVWsz54Fo7kCiNLh5g4f2uXX/6L80Sx
+    WmQni3Kk8KjuImITgvD+LZS0lq8cvqFUWJGPzrQOLcrGAWNVQ8BPursW2oIkCZv7
+    MnNt3Cc00G/55tpQdCxrg0YlnCmhwg7WMruQ1nHn
+    -----END CERTIFICATE-----

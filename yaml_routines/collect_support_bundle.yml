@@ -1,0 +1,15 @@
+# Copyright 2020 HCL Technologies Ltd.
+# get the generated support bundle SFTP-ed on Dev VM
+
+---
+- hosts: my_host
+  vars:
+    support_bundle_name: clustersupportbundle-6.0.3-13477-2022-02-03-07-52-27.tar.gz
+
+  tasks:
+  
+  - name: get the support bundle from remote node to the Dev VM
+    netcommon.net_get:
+      dest: /home/ubuntu/{{support_bundle_name}}
+      # protocol: sftp
+      src: /upgrade/{{support_bundle_name}}

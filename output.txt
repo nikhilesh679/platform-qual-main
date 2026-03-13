@@ -1,0 +1,1001 @@
+[2024-12-29 03:19:01,673] [PQ.platformQual] [DEBUG] -- Cluster YAML file 'cluster.yml' exists and read successfully.
+[2024-12-29 03:19:01,682] [PQ.platformQual] [DEBUG] -- Input YAML file 'input.yml' exists and read successfully.
+[2024-12-29 03:19:01,682] [PQ.platformQual] [DEBUG] -- Private key file 'pkey.pem' exists and read successfully.
+
+[2024-12-29 03:19:01,758] [PQ.platformQual] [DEBUG] -- Successfully connected to node [1] - b-sjc-af-1003-lb.
+[2024-12-29 03:19:01,758] [PQ.platformQual] [DEBUG] -- Trying 'sudo rm /var/lib/rubrik/hosts_to_ipv6_mapping'
+[2024-12-29 03:19:01,818] [PQ.platformQual] [DEBUG] -- Success!
+
+[2024-12-29 03:19:04,985] [PQ.platformQual] [DEBUG] -- Trying 'cluster mfg_status
+'
+[2024-12-29 03:19:09,144] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster mfg_status
+
+==========================
+Getting initial mfg status
+==========================
+Manufacture successfully completed
+on : 2024-12-27T10:42:16
+
+[2024-12-29 03:19:09,145] [PQ.platformQual] [DEBUG] -- Trying 'cluster version
+'
+[2024-12-29 03:19:12,533] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster version
+
+9.4-dev-28595
+
+[2024-12-29 03:19:12,534] [PQ.platformQual] [DEBUG] -- Trying 'cluster reset_node_status
+'
+[2024-12-29 03:19:15,881] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster reset_node_status
+
+=========================
+Getting reset_node status
+=========================
+Reset node exited or has not run yet
+
+[2024-12-29 03:19:15,881] [PQ.platformQual] [DEBUG] -- Trying 'cluster discover'
+[2024-12-29 03:20:56,916] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster discover
+B-0634-lb -> fe80:0:0:0:ec4:7aff:fe8f:b957%bond0
+B-0849-lb -> fe80:0:0:0:ec4:7aff:fe88:c8b5%bond0
+B-0849-lt -> fe80:0:0:0:ec4:7aff:fe88:bb6d%bond0
+B-100217-lt -> fe80:0:0:0:ae1f:6bff:fecb:13a5%bond0
+B-1320-lt -> fe80:0:0:0:ae1f:6bff:fe55:5fdd%bond0
+B-1320-rb -> fe80:0:0:0:ae1f:6bff:fe55:5fc9%bond0
+B-1320-rt -> fe80:0:0:0:ae1f:6bff:fe55:5fd5%bond0
+B-1343-rb -> fe80:0:0:0:ae1f:6bff:fe55:626f%bond0
+B-1412-lt -> fe80:0:0:0:ae1f:6bff:fe55:85af%bond0
+B-1460-lt -> fe80:0:0:0:ae1f:6bff:fe56:1625%bond0
+B-1460-rb -> fe80:0:0:0:ae1f:6bff:fe55:94e1%bond0
+B-1460-rt -> fe80:0:0:0:ae1f:6bff:fe55:9ae1%bond0
+B-1462-lb -> fe80:0:0:0:ae1f:6bff:fe55:9d33%bond0
+B-1462-rb -> fe80:0:0:0:ae1f:6bff:fe55:aa2f%bond0
+B-1490-rt -> fe80:0:0:0:ae1f:6bff:fe55:eac1%bond0
+RC240WZP2338Z0AK -> fe80:0:0:0:5e71:dff:fe52:e7c1%bond0
+RDL6420BYSQS13CNWS3009B5000P01 -> fe80:0:0:0:3efd:feff:fe76:52a1%bond0
+RDL6520G3HP2Q3CNWS300216006V -> fe80:0:0:0:1270:fdff:fe8e:d51%bond0
+RDL740XD7D4SPX2CNFCP0096J01PQ -> fe80:0:0:0:9a03:9bff:fe98:40f7%bond0
+RDL740XD7D6RPX2CNFCP0096J01OA -> fe80:0:0:0:9a03:9bff:fe98:466f%bond0
+RDL750305W2L3MXFC4001AK00XL -> fe80:0:0:0:b696:91ff:fecc:7e5%bond0
+RDL750405W2L3MXFC4001AK00KS -> fe80:0:0:0:b696:91ff:fecc:7bd%bond0
+RDL7505TVMCX3MXFC40033S000C -> fe80:0:0:0:ba3f:d2ff:fe1c:94d9%bond0
+RDL7609SC6Z44 -> fe80:0:0:0:323e:a7ff:fe15:4051%bond0
+RDL760BSC6Z44 -> fe80:0:0:0:323e:a7ff:fe15:36b9%bond0
+RDL760CSC6Z44 -> fe80:0:0:0:323e:a7ff:fe15:36bd%bond0
+RDL7615B2VK144 -> fe80:0:0:0:9e63:c0ff:fe2b:df0f%bond0
+RDLXR4510D197C14 -> fe80:0:0:0:ee2a:72ff:fefa:4545%bond0
+RHPDL360GEN11PYCGU0A6KJ40EV -> fe80:0:0:0:323e:a7ff:fe0f:17dd%bond0
+RHPDL360GEN11PYCGU0A6KJ40GI -> fe80:0:0:0:323e:a7ff:fe0f:16f1%bond0
+RHPDL360GEN11PYCGU0A6KJ40QO -> fe80:0:0:0:1623:f2ff:fe82:fe17%bond0
+RHPDL360PXAQA0ARHD322O -> fe80:0:0:0:4adf:37ff:fec5:b8%bond0
+RHPDL380GEN11PXMCC0JLMJ20RE -> fe80:0:0:0:1623:f2ff:fe02:e3dd%bond0
+RHPDL380PLUSPZCRC0CRHGG11O -> fe80:0:0:0:1270:fdff:fe88:1c85%bond0
+RHPDL380PLUSPZCRC0CRHGG17T -> fe80:0:0:0:1270:fdff:fe88:176f%bond0
+RHPDL380PXAXE0CLMCX1A6 -> fe80:0:0:0:ba83:3ff:fe84:77f1%bond0
+RHPDL380PXLAL0PLMGX1MJ -> fe80:0:0:0:8ae9:a4ff:fea7:1841%bond0
+RS26002UBQWF31100028 -> fe80:0:0:0:42a6:b7ff:fe9c:f9ed%bond0
+RVM162S009908 -> fe80:0:0:0:ec4:7aff:fe8f:d227%bond0
+RVM165S011578 -> fe80:0:0:0:ec4:7aff:fe82:d7d9%bond0
+RVM165S011586 -> fe80:0:0:0:ec4:7aff:fe8e:91ad%bond0
+RVM165S011992 -> fe80:0:0:0:ec4:7aff:fe8e:9a83%bond0
+RVM165S011998 -> fe80:0:0:0:ec4:7aff:fe8e:9191%bond0
+RVM165S018155 -> fe80:0:0:0:ec4:7aff:fe8f:d8b1%bond0
+RVM183S048822 -> fe80:0:0:0:ae1f:6bff:fe8d:d653%bond0
+RVM183S048834 -> fe80:0:0:0:ae1f:6bff:fe8d:badb%bond0
+b-sjc-af-1001-lb -> fe80:0:0:0:3eec:efff:fe4f:fe47%bond0
+b-sjc-af-1001-lt -> fe80:0:0:0:3eec:efff:fe4f:fe15%bond0
+rkdev-02hzom-u87gpg -> fe80:0:0:0:91:30ff:fe43:df01%bond0
+rkdev-04tcz9-ydxxyd -> fe80:0:0:0:91:30ff:fe7d:2274%bond0
+rkdev-0875rj-59e0w5 -> fe80:0:0:0:1:5bff:fe8e:2a3e%bond0
+rkdev-097t78-h1maf7 -> fe80:0:0:0:91:30ff:feef:a6e%bond0
+rkdev-099kvd-1zwrs2 -> fe80:0:0:0:1:63ff:feb3:b6e3%bond0
+rkdev-0a4wez-q3ctzb -> fe80:0:0:0:1:63ff:fe9d:ccac%bond0
+rkdev-0au7aq-0a5miu -> fe80:0:0:0:1:63ff:fe1f:ec53%bond0
+rkdev-0c3ly4-9opvv8 -> fe80:0:0:0:1:5aff:febc:3785%bond0
+rkdev-0cjb89-bq5tji -> fe80:0:0:0:1:5aff:fe5e:8466%bond0
+rkdev-0cw8f7-36l9qz -> fe80:0:0:0:1:5bff:fece:fdd7%bond0
+rkdev-0gflb9-rtmvvm -> fe80:0:0:0:1:63ff:fe42:376c%bond0
+rkdev-0iyfsg-s12j6a -> fe80:0:0:0:1:63ff:feb8:5ee%bond0
+rkdev-0jmr3m-p3w60e -> fe80:0:0:0:91:30ff:fe0e:d4c4%bond0
+rkdev-0jt9b1-zm7sfd -> fe80:0:0:0:1:63ff:fecc:3547%bond0
+rkdev-0k8q0j-tc8u2m -> fe80:0:0:0:91:4ff:fea2:ea2d%bond0
+rkdev-0kegjm-aohyqx -> fe80:0:0:0:1:63ff:fef0:b46a%bond0
+rkdev-0lk2ci-u48vez -> fe80:0:0:0:91:4ff:fe47:6f58%bond0
+rkdev-0md9df-gahhd6 -> fe80:0:0:0:91:30ff:fe2b:5b9e%bond0
+rkdev-0nznj0-xws8yq -> fe80:0:0:0:1:63ff:feab:c51e%bond0
+rkdev-0o8bin-slieos -> fe80:0:0:0:1:63ff:fea6:abce%bond0
+rkdev-0o9lcg-suq8rd -> fe80:0:0:0:1:63ff:feda:d8e8%bond0
+rkdev-0p14qt-xw19s6 -> fe80:0:0:0:1:5aff:fedb:584c%bond0
+rkdev-0pc3eh-2oplcp -> fe80:0:0:0:91:30ff:fe15:dd6e%bond0
+rkdev-0rdajj-km4tdz -> fe80:0:0:0:1:63ff:fe92:4082%bond0
+rkdev-0t4oxx-4daxi4 -> fe80:0:0:0:91:4ff:fec2:25e1%bond0
+rkdev-0to6xo-q27ifc -> fe80:0:0:0:91:30ff:fe3c:4a5c%bond0
+rkdev-0txv2i-rlbj0n -> fe80:0:0:0:1:5aff:fe57:bdb%bond0
+rkdev-0u1afn-36b1y8 -> fe80:0:0:0:1:5bff:fea1:6f84%bond0
+rkdev-0wf7jx-gd3yza -> fe80:0:0:0:91:30ff:fe6c:3312%bond0
+rkdev-0xcrnq-vbd8gq -> fe80:0:0:0:1:5bff:fea0:7b6b%bond0
+rkdev-0xlbpv-r23p4r -> fe80:0:0:0:1:63ff:fe88:406a%bond0
+rkdev-0xwc4x-f8b84o -> fe80:0:0:0:91:4ff:fe4c:74ea%bond0
+rkdev-0zhf1i-m12gld -> fe80:0:0:0:1:63ff:fe1b:1725%bond0
+rkdev-0zyyow-m53854 -> fe80:0:0:0:91:4ff:fef6:847d%bond0
+rkdev-10o9qc-nzks72 -> fe80:0:0:0:1:5aff:fecf:b004%bond0
+rkdev-10v3pw-pppfxj -> fe80:0:0:0:1:63ff:fefc:8a92%bond0
+rkdev-13m5bc-qb3vbi -> fe80:0:0:0:91:30ff:fe1e:6a57%bond0
+rkdev-152eax-6tqwk8 -> fe80:0:0:0:1:5aff:fe3c:94cc%bond0
+rkdev-18ptxc-5158nt -> fe80:0:0:0:1:5bff:fea3:cc2%bond0
+rkdev-1abj9b-nyhyow -> fe80:0:0:0:91:30ff:fee7:45e%bond0
+rkdev-1au1vb-bb9axt -> fe80:0:0:0:1:63ff:fe12:6125%bond0
+rkdev-1d0kat-4g4o79 -> fe80:0:0:0:91:4ff:fe4d:c711%bond0
+rkdev-1ebplu-nf4huq -> fe80:0:0:0:91:4ff:fed7:7a6e%bond0
+rkdev-1fb39a-r4f10g -> fe80:0:0:0:91:4ff:feba:8656%bond0
+rkdev-1hw2xr-9xzj9z -> fe80:0:0:0:1:5bff:fe02:b774%bond0
+rkdev-1il01o-ka8cyq -> fe80:0:0:0:91:4ff:fe14:ca63%bond0
+rkdev-1jtxj9-atwo4p -> fe80:0:0:0:91:4ff:fe7d:4d8c%bond0
+rkdev-1n7vqt-fgmxol -> fe80:0:0:0:1:5aff:feeb:92fc%bond0
+rkdev-1ovfww-d1o95g -> fe80:0:0:0:91:4ff:fe2e:4d59%bond0
+rkdev-1puome-gwikqr -> fe80:0:0:0:1:5bff:fe74:b35%bond0
+rkdev-1qq5x4-62cfi9 -> fe80:0:0:0:91:30ff:fe07:fa1%bond0
+rkdev-1r9po4-5vfqhy -> fe80:0:0:0:91:30ff:fec4:1c5a%bond0
+rkdev-1srvr9-7s86d4 -> fe80:0:0:0:1:5bff:fea6:56db%bond0
+rkdev-1swk28-x93saf -> fe80:0:0:0:91:4ff:fe22:3573%bond0
+rkdev-1te0df-1n583g -> fe80:0:0:0:1:63ff:fe5b:22f%bond0
+rkdev-1tkg3y-awibe7 -> fe80:0:0:0:91:30ff:fe20:82b7%bond0
+rkdev-1tvi6o-brkctg -> fe80:0:0:0:1:5aff:fe38:9f93%bond0
+rkdev-1txele-9mm2ut -> fe80:0:0:0:91:30ff:feed:774f%bond0
+rkdev-1vjq4m-yrcvtq -> fe80:0:0:0:91:30ff:fe81:1ed2%bond0
+rkdev-23gen1-gyoejx -> fe80:0:0:0:91:4ff:fee4:18f0%bond0
+rkdev-269ff4-sbljzd -> fe80:0:0:0:1:63ff:fe04:a660%bond0
+rkdev-27c6ka-d9twgk -> fe80:0:0:0:1:5aff:fe12:a106%bond0
+rkdev-2bqxqp-6qpbvd -> fe80:0:0:0:91:30ff:fe8f:1f36%bond0
+rkdev-2cbznb-4hp19z -> fe80:0:0:0:1:63ff:fe06:15e5%bond0
+rkdev-2d9lry-yuvsi4 -> fe80:0:0:0:91:4ff:fe76:ec08%bond0
+rkdev-2efjhl-h7br3p -> fe80:0:0:0:1:63ff:fe23:c6e1%bond0
+rkdev-2go835-c7f80c -> fe80:0:0:0:91:30ff:fe13:3478%bond0
+rkdev-2h3es6-51f87j -> fe80:0:0:0:1:5aff:fe1e:962f%bond0
+rkdev-2hg9dy-2prred -> fe80:0:0:0:1:5aff:fedf:c5a3%bond0
+rkdev-2hrfll-l6y308 -> fe80:0:0:0:91:4ff:fe22:2f54%bond0
+rkdev-2khlfm-yk3n2u -> fe80:0:0:0:1:5bff:fe21:fd3c%bond0
+rkdev-2p0a8o-gmx0ea -> fe80:0:0:0:1:5aff:fe51:2827%bond0
+rkdev-2tlpcy-1t73v9 -> fe80:0:0:0:1:5bff:fe9f:79fd%bond0
+rkdev-2ubcyv-za3bh2 -> fe80:0:0:0:1:5aff:fe1a:fdba%bond0
+rkdev-2uppvv-cbveay -> fe80:0:0:0:1:63ff:fe38:e66%bond0
+rkdev-2yavv9-949ys1 -> fe80:0:0:0:91:4ff:fed5:445d%bond0
+rkdev-2ypc2o-74qy9u -> fe80:0:0:0:1:63ff:fe96:3746%bond0
+rkdev-312gyc-xj4ki8 -> fe80:0:0:0:91:4ff:fe8e:386d%bond0
+rkdev-329gy3-9b39yw -> fe80:0:0:0:91:4ff:fea5:8535%bond0
+rkdev-34tqym-chbtsl -> fe80:0:0:0:1:5aff:fedf:103d%bond0
+rkdev-36lnct-yhylcw -> fe80:0:0:0:91:30ff:fe01:3010%bond0
+rkdev-38d43q-sbk5yu -> fe80:0:0:0:1:63ff:fe5b:9420%bond0
+rkdev-38wp1m-rzor4s -> fe80:0:0:0:1:5aff:fe09:cc6f%bond0
+rkdev-3a301i-w7mb37 -> fe80:0:0:0:91:30ff:fec7:b57d%bond0
+rkdev-3i9kcg-3ovsj5 -> fe80:0:0:0:1:5bff:fe78:1e09%bond0
+rkdev-3in9p2-szehh1 -> fe80:0:0:0:1:5aff:fe81:3219%bond0
+rkdev-3k34jw-j725yu -> fe80:0:0:0:91:4ff:fe8d:a1e4%bond0
+rkdev-3kh9g3-d4vwmz -> fe80:0:0:0:1:63ff:fe3a:e887%bond0
+rkdev-3mm8he-7e3uc0 -> fe80:0:0:0:1:5bff:fe37:28fd%bond0
+rkdev-3nafsr-thts8d -> fe80:0:0:0:1:5aff:fe29:c99f%bond0
+rkdev-3oqblo-upgtoi -> fe80:0:0:0:91:4ff:fec9:f051%bond0
+rkdev-3pakb0-xy1p4a -> fe80:0:0:0:1:5bff:fe8d:5b6d%bond0
+rkdev-3piceb-2xbf41 -> fe80:0:0:0:91:4ff:fe93:acad%bond0
+rkdev-3q6a0y-mu6ywi -> fe80:0:0:0:1:5aff:fe56:7089%bond0
+rkdev-3w0hkd-phrdkp -> fe80:0:0:0:1:63ff:fe4c:5213%bond0
+rkdev-3wpuxk-te0c6a -> fe80:0:0:0:91:30ff:fe9f:3d43%bond0
+rkdev-3xtlaw-6lfncy -> fe80:0:0:0:91:30ff:fe43:f188%bond0
+rkdev-40hubq-bza9ho -> fe80:0:0:0:91:30ff:fec1:ab7e%bond0
+rkdev-44cdxz-mtn5g2 -> fe80:0:0:0:1:5aff:fe15:d442%bond0
+rkdev-44yeiw-ymypb6 -> fe80:0:0:0:1:5bff:fe0c:b0b8%bond0
+rkdev-45c4mq-7hmzav -> fe80:0:0:0:91:30ff:fec3:d006%bond0
+rkdev-45zzq1-zrq16k -> fe80:0:0:0:1:63ff:fe83:35e1%bond0
+rkdev-4bakud-x4mz2g -> fe80:0:0:0:1:5bff:feb8:19ba%bond0
+rkdev-4cl4ol-nxz1eu -> fe80:0:0:0:91:30ff:fe08:20ea%bond0
+rkdev-4ejw9r-q6kq38 -> fe80:0:0:0:91:30ff:fef1:cff6%bond0
+rkdev-4g1jnw-s1ysm4 -> fe80:0:0:0:91:30ff:fe0d:a992%bond0
+rkdev-4g6nsg-nvf0h4 -> fe80:0:0:0:91:30ff:fe73:cae3%bond0
+rkdev-4hq213-xjn2ks -> fe80:0:0:0:1:5bff:fe02:fca1%bond0
+rkdev-4mkuiz-8c13bb -> fe80:0:0:0:91:4ff:feac:27db%bond0
+rkdev-4mr0bp-0zvt6d -> fe80:0:0:0:91:4ff:fe3a:8422%bond0
+rkdev-4o02r5-rkd2pp -> fe80:0:0:0:91:30ff:fe4f:71e1%bond0
+rkdev-4q1lac-o6ov9n -> fe80:0:0:0:91:30ff:fe03:3f63%bond0
+rkdev-4ri4lv-gda11a -> fe80:0:0:0:1:5aff:feef:b334%bond0
+rkdev-4urq56-9jrrwq -> fe80:0:0:0:1:5bff:fe84:e5b0%bond0
+rkdev-4wz3qt-48uol7 -> fe80:0:0:0:1:5aff:fe54:8410%bond0
+rkdev-4xpvsv-u8r6lg -> fe80:0:0:0:1:5bff:fe35:be19%bond0
+rkdev-4zg084-6yhn3l -> fe80:0:0:0:91:4ff:fe01:4741%bond0
+rkdev-4zn8s3-j77t4e -> fe80:0:0:0:91:30ff:fe98:e70%bond0
+rkdev-53cqwg-rn5pot -> fe80:0:0:0:1:63ff:febc:926%bond0
+rkdev-55mij1-dqbydg -> fe80:0:0:0:91:30ff:fe93:ba37%bond0
+rkdev-55s6l0-83fm6d -> fe80:0:0:0:91:30ff:fe97:1af9%bond0
+rkdev-56i3mj-h0tgzi -> fe80:0:0:0:1:63ff:fe4a:9feb%bond0
+rkdev-56mu8w-ck65w1 -> fe80:0:0:0:1:63ff:fe64:c651%bond0
+rkdev-56wtuz-hnmffv -> fe80:0:0:0:91:4ff:fe3f:975d%bond0
+rkdev-5745xu-zqfe95 -> fe80:0:0:0:91:30ff:fe93:1311%bond0
+rkdev-5alzre-iensga -> fe80:0:0:0:91:4ff:fe60:a0c7%bond0
+rkdev-5ga9as-97ff6c -> fe80:0:0:0:1:63ff:fe94:72d9%bond0
+rkdev-5h3i9j-fyac07 -> fe80:0:0:0:91:4ff:fe36:9afc%bond0
+rkdev-5kqkwx-revnsn -> fe80:0:0:0:1:63ff:fefd:3a50%bond0
+rkdev-5l1kfj-nij0sc -> fe80:0:0:0:1:5bff:fe81:af31%bond0
+rkdev-5l53zk-osazf0 -> fe80:0:0:0:91:4ff:fed0:fce5%bond0
+rkdev-5mpl22-gvujlo -> fe80:0:0:0:1:63ff:fed6:53f2%bond0
+rkdev-5n8x1u-e8kt8m -> fe80:0:0:0:91:4ff:fecb:31ff%bond0
+rkdev-5pxdyc-tyvr1e -> fe80:0:0:0:91:30ff:fedb:58f1%bond0
+rkdev-5qpyf4-d5e5f6 -> fe80:0:0:0:1:5aff:fe3f:8e25%bond0
+rkdev-5rm0yq-rd73rm -> fe80:0:0:0:1:63ff:fe08:d398%bond0
+rkdev-5szqgn-t51t8s -> fe80:0:0:0:1:63ff:fe78:1417%bond0
+rkdev-5t3vft-x4cslj -> fe80:0:0:0:1:5bff:fe27:900d%bond0
+rkdev-5ts7yz-5gqwjn -> fe80:0:0:0:1:63ff:feff:229f%bond0
+rkdev-5w1ov4-49ih93 -> fe80:0:0:0:1:5aff:fe9c:b8b7%bond0
+rkdev-5wp9oa-xh32br -> fe80:0:0:0:1:63ff:fe74:1b0d%bond0
+rkdev-5zqzdr-70a01y -> fe80:0:0:0:1:63ff:fe3b:5d18%bond0
+rkdev-61anu4-8e43jx -> fe80:0:0:0:1:63ff:fe33:feb9%bond0
+rkdev-636vi1-48m4v2 -> fe80:0:0:0:91:30ff:fe5d:8daf%bond0
+rkdev-66sfzp-zzcjzn -> fe80:0:0:0:1:5aff:fe5f:c916%bond0
+rkdev-66u5st-nl1vxt -> fe80:0:0:0:1:5bff:fe54:2441%bond0
+rkdev-67rkz2-bocaha -> fe80:0:0:0:1:5aff:feb8:846c%bond0
+rkdev-68ujkh-1i6qln -> fe80:0:0:0:91:4ff:fe32:a89d%bond0
+rkdev-69hpb6-2fuyh5 -> fe80:0:0:0:91:30ff:fe0f:521d%bond0
+rkdev-6awwdp-mp1nfc -> fe80:0:0:0:1:5aff:fef9:1f02%bond0
+rkdev-6g3jra-snooej -> fe80:0:0:0:91:4ff:fec0:ad0d%bond0
+rkdev-6jh4wg-cql4rr -> fe80:0:0:0:91:30ff:fe94:a3a8%bond0
+rkdev-6qf3ue-9yqs7n -> fe80:0:0:0:1:5bff:feaa:af66%bond0
+rkdev-6qt63n-qvaybb -> fe80:0:0:0:1:63ff:fec1:9364%bond0
+rkdev-6sd91b-j1fvgl -> fe80:0:0:0:91:30ff:fe91:5158%bond0
+rkdev-6td5fc-kdiqgw -> fe80:0:0:0:1:63ff:fead:bc7c%bond0
+rkdev-6uebfu-325y49 -> fe80:0:0:0:91:4ff:feba:4b86%bond0
+rkdev-6vwtk2-vpy4bd -> fe80:0:0:0:1:63ff:fef9:77cd%bond0
+rkdev-6wm66y-jrtlmv -> fe80:0:0:0:1:63ff:fefd:ae3d%bond0
+rkdev-6x7q5g-u4f42e -> fe80:0:0:0:91:4ff:fe68:a728%bond0
+rkdev-6y2rjy-tk9jn8 -> fe80:0:0:0:1:5bff:fe25:cbd5%bond0
+rkdev-6zgr7r-hexvko -> fe80:0:0:0:1:5bff:fe4c:8be3%bond0
+rkdev-6zl4e4-us6thw -> fe80:0:0:0:1:63ff:fe20:2b4b%bond0
+rkdev-702fmr-cwsi8l -> fe80:0:0:0:1:5bff:fe07:3ba0%bond0
+rkdev-71vdec-cu1zad -> fe80:0:0:0:1:5aff:feb0:2a51%bond0
+rkdev-72kc0i-34lis4 -> fe80:0:0:0:91:4ff:fefe:7c71%bond0
+rkdev-73x0tk-l50596 -> fe80:0:0:0:1:5bff:feb6:4e35%bond0
+rkdev-74q8qo-z7r2g6 -> fe80:0:0:0:91:4ff:fe03:430f%bond0
+rkdev-75dr4r-0wekse -> fe80:0:0:0:1:5bff:fed7:8a73%bond0
+rkdev-79jtfl-kncw16 -> fe80:0:0:0:91:30ff:fee7:def8%bond0
+rkdev-7bcd40-e9jt96 -> fe80:0:0:0:91:4ff:feb6:329%bond0
+rkdev-7bioff-o90l5t -> fe80:0:0:0:1:63ff:fee6:ad6e%bond0
+rkdev-7cf9lg-c04p0x -> fe80:0:0:0:1:63ff:fe52:55ae%bond0
+rkdev-7hm5e1-lna6e2 -> fe80:0:0:0:91:30ff:fec9:4d6d%bond0
+rkdev-7htxnd-du2mi1 -> fe80:0:0:0:1:63ff:fee1:e670%bond0
+rkdev-7hznac-h80pi3 -> fe80:0:0:0:91:30ff:fef1:41a0%bond0
+rkdev-7iojw7-idkwdd -> fe80:0:0:0:91:4ff:fe02:1feb%bond0
+rkdev-7n751w-s0mr4q -> fe80:0:0:0:91:30ff:fe43:cefd%bond0
+rkdev-7onr8b-n7fb2v -> fe80:0:0:0:1:5aff:fed1:9d1e%bond0
+rkdev-7qhh79-t6zyrd -> fe80:0:0:0:1:5aff:fe06:a901%bond0
+rkdev-7ql3it-uh8zr1 -> fe80:0:0:0:1:5aff:fe3a:8d61%bond0
+rkdev-7s3rm1-n1keta -> fe80:0:0:0:1:63ff:feee:78b7%bond0
+rkdev-7tjxac-0w9kuk -> fe80:0:0:0:1:5aff:feb9:bece%bond0
+rkdev-7tlfy4-b8z5ve -> fe80:0:0:0:1:5aff:fe8b:d09c%bond0
+rkdev-7vjnop-7eahzk -> fe80:0:0:0:1:63ff:feb3:7d8%bond0
+rkdev-7yzm5z-jxadr3 -> fe80:0:0:0:1:5aff:fee9:33f0%bond0
+rkdev-7z6a4p-5590e6 -> fe80:0:0:0:1:63ff:fecb:f116%bond0
+rkdev-7zustf-0n7qq1 -> fe80:0:0:0:1:5aff:fe48:715a%bond0
+rkdev-80tes3-2j86a1 -> fe80:0:0:0:1:5aff:febb:1efe%bond0
+rkdev-815c2t-dv7suh -> fe80:0:0:0:1:63ff:feca:351%bond0
+rkdev-86bicl-qqn3yx -> fe80:0:0:0:91:30ff:fe1f:61a5%bond0
+rkdev-87zkf7-z759zb -> fe80:0:0:0:91:30ff:fe4d:5e33%bond0
+rkdev-8a32b4-vv8lyc -> fe80:0:0:0:1:5aff:fe13:f694%bond0
+rkdev-8f84cz-s6h07h -> fe80:0:0:0:1:5aff:fee9:4801%bond0
+rkdev-8h2ffd-jku1o1 -> fe80:0:0:0:1:5aff:fe9c:c7b5%bond0
+rkdev-8hkqi9-86n3sp -> fe80:0:0:0:91:4ff:fe33:5055%bond0
+rkdev-8hwtau-sqsnj1 -> fe80:0:0:0:91:4ff:fe01:4c27%bond0
+rkdev-8iapg0-v8e74u -> fe80:0:0:0:1:5aff:feae:c1d7%bond0
+rkdev-8ihkx0-9zprpk -> fe80:0:0:0:1:5aff:fe6b:8af5%bond0
+rkdev-8izcue-e5dkyd -> fe80:0:0:0:91:30ff:fea4:faab%bond0
+rkdev-8jbp67-9nup08 -> fe80:0:0:0:1:63ff:fe0f:6217%bond0
+rkdev-8kpa40-g54hv8 -> fe80:0:0:0:1:5bff:fef4:3479%bond0
+rkdev-8mkzez-jns16y -> fe80:0:0:0:1:5aff:fe6b:8256%bond0
+rkdev-8myzto-ktr90c -> fe80:0:0:0:91:4ff:fee5:f6ed%bond0
+rkdev-8nf0im-3ibft8 -> fe80:0:0:0:1:5bff:fe0f:937c%bond0
+rkdev-8ntzgw-gismpo -> fe80:0:0:0:91:30ff:fe79:7ded%bond0
+rkdev-8phhmz-8rua4y -> fe80:0:0:0:91:4ff:fe16:cee8%bond0
+rkdev-8pxkfm-nyx83q -> fe80:0:0:0:91:30ff:fe1e:5977%bond0
+rkdev-8rav6v-43kksl -> fe80:0:0:0:91:30ff:fe1e:7451%bond0
+rkdev-8rrk44-x1xubs -> fe80:0:0:0:91:30ff:fe50:d408%bond0
+rkdev-8rss9s-0pzek2 -> fe80:0:0:0:91:4ff:fe22:8dfe%bond0
+rkdev-8sddvz-4eyyav -> fe80:0:0:0:1:5bff:fe6d:2c23%bond0
+rkdev-8u5x3k-ewrcpd -> fe80:0:0:0:91:4ff:fed6:b2ea%bond0
+rkdev-8vq4pb-yx8hf3 -> fe80:0:0:0:1:63ff:febb:d17%bond0
+rkdev-8x9fip-2tiplh -> fe80:0:0:0:91:4ff:fe9a:9cbe%bond0
+rkdev-914iop-nq3xp9 -> fe80:0:0:0:91:4ff:fee2:5e61%bond0
+rkdev-91980s-fziqv3 -> fe80:0:0:0:1:5aff:fead:1a7a%bond0
+rkdev-92ucqt-xxs30e -> fe80:0:0:0:91:4ff:fe8a:c740%bond0
+rkdev-93fgw8-p0xkec -> fe80:0:0:0:1:5aff:fea4:16e%bond0
+rkdev-94l3ze-f7c3qj -> fe80:0:0:0:1:5bff:fe5d:e62b%bond0
+rkdev-94stxw-0d7aa6 -> fe80:0:0:0:91:30ff:fe68:9f19%bond0
+rkdev-98888z-a3f6r5 -> fe80:0:0:0:91:4ff:fea2:a80a%bond0
+rkdev-9bccm1-eghkpw -> fe80:0:0:0:91:4ff:fe5c:6f%bond0
+rkdev-9e76m5-24m1hv -> fe80:0:0:0:91:4ff:fe6a:ca0b%bond0
+rkdev-9fy30h-ir3tb9 -> fe80:0:0:0:1:5bff:fe96:b124%bond0
+rkdev-9gtdrt-h5i17v -> fe80:0:0:0:91:4ff:fe77:4664%bond0
+rkdev-9hfvra-5hw5qc -> fe80:0:0:0:91:30ff:fe7d:a850%bond0
+rkdev-9ijeyr-wfnl2w -> fe80:0:0:0:1:5aff:fed1:7607%bond0
+rkdev-9mmluz-opn04j -> fe80:0:0:0:91:4ff:febf:b906%bond0
+rkdev-9my29c-xnqidn -> fe80:0:0:0:1:63ff:fe25:f061%bond0
+rkdev-9n6qse-rwkuou -> fe80:0:0:0:91:4ff:fe45:48a4%bond0
+rkdev-9nrw4w-6l2oln -> fe80:0:0:0:91:30ff:fe85:d41a%bond0
+rkdev-9o3hww-al7nbb -> fe80:0:0:0:91:30ff:fef1:792%bond0
+rkdev-9pj0jw-gahgd5 -> fe80:0:0:0:1:5aff:fe54:ba9b%bond0
+rkdev-9qrf6g-gyz535 -> fe80:0:0:0:1:63ff:fe62:af40%bond0
+rkdev-9thvag-oa95uo -> fe80:0:0:0:91:30ff:feda:e68b%bond0
+rkdev-9v1opl-dazq3m -> fe80:0:0:0:91:30ff:fed9:c821%bond0
+rkdev-9vn1gx-jcrrxu -> fe80:0:0:0:1:5aff:feeb:81ea%bond0
+rkdev-9xgt3o-8apqba -> fe80:0:0:0:1:5aff:fee4:9954%bond0
+rkdev-9xq9w6-cb1sh0 -> fe80:0:0:0:91:4ff:fe63:f4a1%bond0
+rkdev-9yi92v-7ql4sf -> fe80:0:0:0:1:5bff:fe6c:3cd4%bond0
+rkdev-9ylo0g-u6ozqf -> fe80:0:0:0:1:5bff:fe2d:e703%bond0
+rkdev-a0efe7-c8t3ja -> fe80:0:0:0:1:63ff:feb5:1040%bond0
+rkdev-a0zzv3-hpfxbi -> fe80:0:0:0:91:4ff:fef8:e4b2%bond0
+rkdev-a3az9y-zu2x2x -> fe80:0:0:0:1:5bff:fe2f:549d%bond0
+rkdev-a61sa7-rgyopj -> fe80:0:0:0:1:5bff:fe02:f4f3%bond0
+rkdev-aaharm-bl2vvj -> fe80:0:0:0:1:63ff:fefb:2516%bond0
+rkdev-ab1rwg-w3m9ve -> fe80:0:0:0:91:30ff:fe7d:121a%bond0
+rkdev-ab9irh-6ih8db -> fe80:0:0:0:91:30ff:fe42:dc9%bond0
+rkdev-aby4of-bvc6d3 -> fe80:0:0:0:1:5bff:fe1d:46e6%bond0
+rkdev-aec43u-0pob9e -> fe80:0:0:0:1:63ff:fede:3865%bond0
+rkdev-afm6q6-y3zi52 -> fe80:0:0:0:91:30ff:fe32:4703%bond0
+rkdev-ag9rrm-2aqer3 -> fe80:0:0:0:1:63ff:fe66:6957%bond0
+rkdev-ajojcp-evsr03 -> fe80:0:0:0:1:5bff:fe64:97de%bond0
+rkdev-al31it-231rk5 -> fe80:0:0:0:1:63ff:feba:5651%bond0
+rkdev-amb25k-dm89yr -> fe80:0:0:0:91:4ff:fe58:caf5%bond0
+rkdev-amgoey-9h0u4z -> fe80:0:0:0:1:5bff:fe0e:e552%bond0
+rkdev-an3n2d-2105v8 -> fe80:0:0:0:91:30ff:fe39:53c%bond0
+rkdev-ap5uoa-oh6pu5 -> fe80:0:0:0:1:63ff:fe63:7c67%bond0
+rkdev-apq50t-kwh4os -> fe80:0:0:0:1:5aff:fe40:55de%bond0
+rkdev-arzef0-g8i8k4 -> fe80:0:0:0:1:63ff:fe3c:d5a5%bond0
+rkdev-aw36vr-697p5s -> fe80:0:0:0:91:4ff:fe24:e650%bond0
+rkdev-aybo3g-fg1ypk -> fe80:0:0:0:1:5bff:fec1:37a1%bond0
+rkdev-ayx0y4-ld8b0s -> fe80:0:0:0:91:30ff:fee0:fe0d%bond0
+rkdev-aztivs-qn7ppo -> fe80:0:0:0:1:5aff:fe06:983b%bond0
+rkdev-b22dcm-i4yokp -> fe80:0:0:0:91:30ff:fe54:b2c7%bond0
+rkdev-b27mj3-i5uiqh -> fe80:0:0:0:91:30ff:fe05:1282%bond0
+rkdev-b3ftue-mlhzfg -> fe80:0:0:0:1:63ff:fe06:960b%bond0
+rkdev-b7cug4-v5js5d -> fe80:0:0:0:91:30ff:fed5:1532%bond0
+rkdev-b89j7u-6430rp -> fe80:0:0:0:1:63ff:fe2a:2416%bond0
+rkdev-bce4yv-tnpnkl -> fe80:0:0:0:91:30ff:fe0d:ecec%bond0
+rkdev-bg62u7-wkn7wx -> fe80:0:0:0:1:5aff:fe0e:8f28%bond0
+rkdev-bi7k3e-w6xthz -> fe80:0:0:0:1:63ff:fed7:e332%bond0
+rkdev-biggeq-7kx4st -> fe80:0:0:0:91:30ff:fe2f:810e%bond0
+rkdev-bjaomc-93qpxz -> fe80:0:0:0:1:63ff:fedb:16b7%bond0
+rkdev-bkndk0-gp4usl -> fe80:0:0:0:1:5bff:fe6f:c514%bond0
+rkdev-blwpvw-vs39pm -> fe80:0:0:0:1:63ff:febc:2477%bond0
+rkdev-bm9box-ecufdq -> fe80:0:0:0:1:63ff:fe77:36e%bond0
+rkdev-bt6vbc-bw617s -> fe80:0:0:0:91:4ff:fee4:3a50%bond0
+rkdev-btoo97-vdx946 -> fe80:0:0:0:1:5bff:fece:f1af%bond0
+rkdev-bu5uqk-mqrxzk -> fe80:0:0:0:91:4ff:fe13:7f46%bond0
+rkdev-bu77u9-2gnzt2 -> fe80:0:0:0:1:63ff:fe29:c756%bond0
+rkdev-bw0fp9-annwwx -> fe80:0:0:0:1:63ff:fec1:4a2e%bond0
+rkdev-bwbig5-07alx8 -> fe80:0:0:0:91:4ff:fe56:a3a5%bond0
+rkdev-bx3jjz-q7vmut -> fe80:0:0:0:91:30ff:fea4:6040%bond0
+rkdev-bzci92-4ps48k -> fe80:0:0:0:1:63ff:fe79:7ac8%bond0
+rkdev-c2aok1-3dk87b -> fe80:0:0:0:91:30ff:fec2:2385%bond0
+rkdev-c704n5-auoc2t -> fe80:0:0:0:91:4ff:fe72:93bc%bond0
+rkdev-c75daq-qwwh24 -> fe80:0:0:0:91:30ff:fed5:872a%bond0
+rkdev-c7br6e-fbo3n9 -> fe80:0:0:0:1:63ff:fe48:ab62%bond0
+rkdev-c7rfz8-fie4lx -> fe80:0:0:0:1:5aff:fe69:b900%bond0
+rkdev-c9ulvm-kad3m7 -> fe80:0:0:0:1:5aff:fe8a:3ca%bond0
+rkdev-ccgs6y-52q7wz -> fe80:0:0:0:1:63ff:fec7:cc0d%bond0
+rkdev-cdhf56-qztdip -> fe80:0:0:0:91:30ff:fe89:f43a%bond0
+rkdev-cdp0o0-oi43hc -> fe80:0:0:0:1:5bff:fe2e:44fa%bond0
+rkdev-ceniqb-l65h6h -> fe80:0:0:0:1:5aff:fe4f:e872%bond0
+rkdev-cha1ot-7j5h2l -> fe80:0:0:0:1:63ff:fec1:c283%bond0
+rkdev-chiork-ggldgo -> fe80:0:0:0:91:30ff:fe61:af12%bond0
+rkdev-chiprt-chd8ws -> fe80:0:0:0:1:5aff:fe86:4ac1%bond0
+rkdev-chpp2q-6rq9ie -> fe80:0:0:0:91:4ff:fea5:473c%bond0
+rkdev-cjvdlf-rjdcmv -> fe80:0:0:0:91:30ff:fe5d:ad57%bond0
+rkdev-ckpto7-d9imqk -> fe80:0:0:0:1:63ff:fefb:177a%bond0
+rkdev-clh4t7-a3l4at -> fe80:0:0:0:91:30ff:fefc:59cd%bond0
+rkdev-cm39f7-o2s54w -> fe80:0:0:0:91:30ff:fed0:3769%bond0
+rkdev-cno7v2-ymsll9 -> fe80:0:0:0:91:4ff:fe04:53b9%bond0
+rkdev-cqfhl5-8lucfb -> fe80:0:0:0:91:30ff:fe49:3dff%bond0
+rkdev-cqmdr4-3dklhi -> fe80:0:0:0:91:30ff:fe2a:ce5a%bond0
+rkdev-cs2bhk-0tyqcy -> fe80:0:0:0:1:5bff:fee5:136a%bond0
+rkdev-ct6bhr-irtrd3 -> fe80:0:0:0:1:63ff:fe87:ef79%bond0
+rkdev-cv57qz-n7aec9 -> fe80:0:0:0:1:5bff:fecc:dbae%bond0
+rkdev-cw1gqs-d7u2on -> fe80:0:0:0:1:5aff:fe4a:436d%bond0
+rkdev-cwuyfw-39lhyl -> fe80:0:0:0:1:5bff:fe90:6863%bond0
+rkdev-cy7hz2-2v7xsl -> fe80:0:0:0:91:4ff:fe86:fdff%bond0
+rkdev-cygxsl-jveugh -> fe80:0:0:0:91:4ff:fe72:3371%bond0
+rkdev-d1llo3-16jzca -> fe80:0:0:0:1:5aff:fe38:6fd8%bond0
+rkdev-d3tldr-xofx40 -> fe80:0:0:0:1:5aff:fe8c:5c32%bond0
+rkdev-d4262o-ro4rdi -> fe80:0:0:0:1:5aff:fe4c:af05%bond0
+rkdev-d4j9f8-ct9uya -> fe80:0:0:0:1:5aff:fea7:1f98%bond0
+rkdev-d5xm21-19j46z -> fe80:0:0:0:1:5aff:feb3:3b4e%bond0
+rkdev-davfj3-5p0v1z -> fe80:0:0:0:91:4ff:fe0c:c8da%bond0
+rkdev-dbedkq-j3j7ma -> fe80:0:0:0:91:4ff:fe6f:6304%bond0
+rkdev-dbu7ma-b4z5og -> fe80:0:0:0:1:63ff:fe4a:7474%bond0
+rkdev-ddtjsc-2f929t -> fe80:0:0:0:91:30ff:fe73:7760%bond0
+rkdev-dhihg6-kbpuft -> fe80:0:0:0:1:5aff:fe86:c51d%bond0
+rkdev-dkd07l-6wfwoj -> fe80:0:0:0:91:30ff:fed7:bf9f%bond0
+rkdev-dmx55b-01zlyr -> fe80:0:0:0:1:63ff:fe85:db5e%bond0
+rkdev-dnl8ip-wc8m7k -> fe80:0:0:0:91:30ff:fe50:a07%bond0
+rkdev-dog2b7-tolkhw -> fe80:0:0:0:1:5aff:fe1f:51d1%bond0
+rkdev-dtr421-u6vhg9 -> fe80:0:0:0:1:63ff:fe40:fa5a%bond0
+rkdev-dv3jco-xdl2o6 -> fe80:0:0:0:1:5bff:fed0:fcfd%bond0
+rkdev-dyhlzm-epadyc -> fe80:0:0:0:1:63ff:fe58:dcf8%bond0
+rkdev-e0t6yh-xa0jeu -> fe80:0:0:0:1:5aff:fe8d:9673%bond0
+rkdev-e2i5e8-qeotwu -> fe80:0:0:0:1:5bff:fea9:2a8a%bond0
+rkdev-e6qrsz-k06eu7 -> fe80:0:0:0:1:63ff:feab:63f5%bond0
+rkdev-e7wcsq-3g2fkc -> fe80:0:0:0:91:30ff:fe3c:1bfb%bond0
+rkdev-ea7t6v-c2d3ut -> fe80:0:0:0:91:30ff:fe72:7079%bond0
+rkdev-eabgp1-h5m5sf -> fe80:0:0:0:1:5aff:fe67:1b09%bond0
+rkdev-ebn1b4-ddvl3n -> fe80:0:0:0:1:5aff:fe48:dba4%bond0
+rkdev-ed4zk5-lix0x1 -> fe80:0:0:0:1:63ff:feb1:2b37%bond0
+rkdev-efvjx9-oeg0yv -> fe80:0:0:0:91:4ff:fe6a:5b1%bond0
+rkdev-ehhdgb-axus6u -> fe80:0:0:0:91:30ff:fe56:8a1c%bond0
+rkdev-eii21e-rqvj73 -> fe80:0:0:0:91:30ff:fe44:5f0b%bond0
+rkdev-em4m42-oxe1od -> fe80:0:0:0:91:30ff:fef9:a009%bond0
+rkdev-en5auo-loyofu -> fe80:0:0:0:91:4ff:feb1:10dc%bond0
+rkdev-ep71im-z77ccl -> fe80:0:0:0:1:5bff:fe29:46d2%bond0
+rkdev-eqliyu-nnh6el -> fe80:0:0:0:1:63ff:fe5f:8cad%bond0
+rkdev-erh8c2-25gjwg -> fe80:0:0:0:91:30ff:fec2:37c2%bond0
+rkdev-ervya2-9gs7di -> fe80:0:0:0:1:5bff:fecc:d73f%bond0
+rkdev-eu8w5m-zdp5pg -> fe80:0:0:0:1:63ff:feab:58a5%bond0
+rkdev-eu9q5a-x3qvg7 -> fe80:0:0:0:1:63ff:feff:953d%bond0
+rkdev-eve612-pl08ee -> fe80:0:0:0:91:4ff:fe51:9faf%bond0
+rkdev-ewbqqd-oob6u0 -> fe80:0:0:0:1:5aff:fe5f:6de9%bond0
+rkdev-f1hiuc-xs2h9p -> fe80:0:0:0:1:5aff:fe16:ba5b%bond0
+rkdev-f24fzu-ft866q -> fe80:0:0:0:91:4ff:fea1:a807%bond0
+rkdev-f2l6jz-gvk1cr -> fe80:0:0:0:91:30ff:fef4:acc9%bond0
+rkdev-f2pyta-q2uhkz -> fe80:0:0:0:1:5aff:fef3:6067%bond0
+rkdev-f2sfej-wnvsnd -> fe80:0:0:0:1:63ff:fea5:c5c0%bond0
+rkdev-f3mqgu-2g86ws -> fe80:0:0:0:1:5aff:fe0f:8c84%bond0
+rkdev-f7fbhb-w6ovm2 -> fe80:0:0:0:1:5aff:fe57:70f5%bond0
+rkdev-f8z632-gulm83 -> fe80:0:0:0:91:4ff:fea2:984f%bond0
+rkdev-fbq2bl-5n7jum -> fe80:0:0:0:91:30ff:fe87:dc1%bond0
+rkdev-fgq7cs-ctudsj -> fe80:0:0:0:91:4ff:fe22:48aa%bond0
+rkdev-filsf8-3max2b -> fe80:0:0:0:1:5bff:feeb:5636%bond0
+rkdev-fiyiar-us2w6v -> fe80:0:0:0:1:5bff:feb1:a3d5%bond0
+rkdev-fizpg7-y6u3u4 -> fe80:0:0:0:1:5bff:fede:be53%bond0
+rkdev-fjm79h-dq70wq -> fe80:0:0:0:1:5aff:fe29:7661%bond0
+rkdev-fju7j1-vi6mvc -> fe80:0:0:0:1:63ff:fed7:28e3%bond0
+rkdev-flps47-d7swye -> fe80:0:0:0:1:63ff:fea8:361%bond0
+rkdev-flwaex-q3ye4x -> fe80:0:0:0:91:4ff:fec7:84d0%bond0
+rkdev-fm2ifx-lhzmsy -> fe80:0:0:0:1:5bff:fe2f:7ebd%bond0
+rkdev-fmvkyi-prywsw -> fe80:0:0:0:91:30ff:fe11:9bc0%bond0
+rkdev-focilj-63wjia -> fe80:0:0:0:1:5aff:fed4:4b03%bond0
+rkdev-fomd4t-4725h3 -> fe80:0:0:0:1:63ff:fe39:1b59%bond0
+rkdev-fpsly8-sx3zj1 -> fe80:0:0:0:91:30ff:fea4:35aa%bond0
+rkdev-fqzjeq-m67z9e -> fe80:0:0:0:1:5aff:fef1:8c6a%bond0
+rkdev-fsdehf-9i7hug -> fe80:0:0:0:91:4ff:fef7:bb0e%bond0
+rkdev-fsm7la-3hd4zo -> fe80:0:0:0:1:5aff:feca:3d27%bond0
+rkdev-ful8qs-zs76zp -> fe80:0:0:0:1:63ff:fe7e:b755%bond0
+rkdev-fvwblr-6se6ah -> fe80:0:0:0:91:4ff:fe51:4f2a%bond0
+rkdev-fw04rc-zeb5h3 -> fe80:0:0:0:1:5bff:fef6:ea9b%bond0
+rkdev-fwtdt0-x297uj -> fe80:0:0:0:91:30ff:fefc:8a7c%bond0
+rkdev-fz7c5n-4j27uc -> fe80:0:0:0:91:4ff:fece:492a%bond0
+rkdev-g1ymdl-oxi0r8 -> fe80:0:0:0:91:30ff:fed3:8f0b%bond0
+rkdev-g3dvxl-46wyo5 -> fe80:0:0:0:91:4ff:fe18:d4c%bond0
+rkdev-gae2oz-hu83ew -> fe80:0:0:0:91:30ff:fedb:ff79%bond0
+rkdev-gd08no-0zc0vx -> fe80:0:0:0:1:63ff:fe70:a442%bond0
+rkdev-gd08rv-enu1dl -> fe80:0:0:0:1:63ff:fe63:f0de%bond0
+rkdev-gdnd9q-gbo4ow -> fe80:0:0:0:1:63ff:fe21:c65d%bond0
+rkdev-gdtur6-8tspix -> fe80:0:0:0:1:5bff:feda:c292%bond0
+rkdev-gevbs3-ui4pls -> fe80:0:0:0:1:63ff:fefa:b747%bond0
+rkdev-gh17ke-wiibn3 -> fe80:0:0:0:91:4ff:fe65:c3df%bond0
+rkdev-ghif6y-0hvm4o -> fe80:0:0:0:1:63ff:febe:c039%bond0
+rkdev-gif0w6-2b46k6 -> fe80:0:0:0:1:63ff:feb6:9c7d%bond0
+rkdev-gjlnrc-sufeb0 -> fe80:0:0:0:91:4ff:fec9:f78d%bond0
+rkdev-gk57tc-6o167f -> fe80:0:0:0:1:5bff:fe48:2989%bond0
+rkdev-gl8845-bdqu3m -> fe80:0:0:0:1:63ff:fe74:c552%bond0
+rkdev-gma801-8o7mfy -> fe80:0:0:0:91:4ff:feb8:f8c0%bond0
+rkdev-go138j-t8zlae -> fe80:0:0:0:1:63ff:fe75:bb1%bond0
+rkdev-gogqsj-aouot3 -> fe80:0:0:0:91:4ff:fe2b:d60a%bond0
+rkdev-gondd3-ivh4q3 -> fe80:0:0:0:1:63ff:fe76:978b%bond0
+rkdev-gp8jln-vhzj0z -> fe80:0:0:0:91:4ff:fe16:7849%bond0
+rkdev-gq1ndo-c788h0 -> fe80:0:0:0:91:4ff:fe09:1ee2%bond0
+rkdev-gqcpa0-ru1g35 -> fe80:0:0:0:1:63ff:fe67:617e%bond0
+rkdev-grmm49-saicr4 -> fe80:0:0:0:1:63ff:fe3d:35ed%bond0
+rkdev-grqy1g-xgrtwc -> fe80:0:0:0:91:4ff:febe:e748%bond0
+rkdev-gssrrr-jd82ua -> fe80:0:0:0:91:30ff:fe30:7731%bond0
+rkdev-gumzvq-mz0rbx -> fe80:0:0:0:91:30ff:feed:71b1%bond0
+rkdev-gz03vb-2c0jr5 -> fe80:0:0:0:1:5aff:feb4:e502%bond0
+rkdev-gzqzks-a6soes -> fe80:0:0:0:1:63ff:fea4:3c47%bond0
+rkdev-h1cgpu-jhuvu7 -> fe80:0:0:0:1:63ff:fe46:dc76%bond0
+rkdev-h289e4-xgfpb0 -> fe80:0:0:0:91:4ff:fe43:699e%bond0
+rkdev-h2xlnf-63bob1 -> fe80:0:0:0:91:30ff:fe88:68c8%bond0
+rkdev-h3ti7h-ouk12b -> fe80:0:0:0:1:63ff:fe6c:3c80%bond0
+rkdev-h51sw3-smmoam -> fe80:0:0:0:91:30ff:fe28:1ce4%bond0
+rkdev-h6pbbx-lx33ka -> fe80:0:0:0:91:30ff:fe18:f927%bond0
+rkdev-h7ku3t-5u79zk -> fe80:0:0:0:1:63ff:fec4:cbad%bond0
+rkdev-h8p3ph-pjw6pm -> fe80:0:0:0:1:5bff:fe02:4989%bond0
+rkdev-ha00ea-zjkb41 -> fe80:0:0:0:91:30ff:fe18:ad33%bond0
+rkdev-hat0cp-3jf86t -> fe80:0:0:0:1:63ff:fe13:d31b%bond0
+rkdev-hbdsu4-bp7vb1 -> fe80:0:0:0:1:63ff:fe87:6467%bond0
+rkdev-hddz5c-5ahm3z -> fe80:0:0:0:91:4ff:fe1d:2289%bond0
+rkdev-he07ea-h22bxv -> fe80:0:0:0:1:5aff:fe5f:1672%bond0
+rkdev-hgfsfa-gka537 -> fe80:0:0:0:1:5aff:feed:d0ed%bond0
+rkdev-hi0qf7-0e7plk -> fe80:0:0:0:91:30ff:fe8d:b57e%bond0
+rkdev-hjpb48-08mtjj -> fe80:0:0:0:1:63ff:fe63:9807%bond0
+rkdev-hk8xt3-bft873 -> fe80:0:0:0:1:5aff:fe35:ff43%bond0
+rkdev-hkw8ox-v21lhn -> fe80:0:0:0:1:5bff:fe16:8e6d%bond0
+rkdev-hli7vn-cfap4w -> fe80:0:0:0:91:4ff:fe82:2654%bond0
+rkdev-hm6mn3-fo2abb -> fe80:0:0:0:1:5bff:fe35:981c%bond0
+rkdev-homgtu-y59qu0 -> fe80:0:0:0:1:5bff:fe05:b30d%bond0
+rkdev-hpia8t-j5rlu3 -> fe80:0:0:0:91:4ff:fe06:bbd9%bond0
+rkdev-hwpufj-k7b4hm -> fe80:0:0:0:1:63ff:feaf:9ea1%bond0
+rkdev-hyc9qu-way96j -> fe80:0:0:0:1:63ff:fe16:549d%bond0
+rkdev-i1xt0l-p67g86 -> fe80:0:0:0:1:5aff:fef1:4732%bond0
+rkdev-i43qe5-jki8qy -> fe80:0:0:0:91:30ff:fe9d:2c0%bond0
+rkdev-i4qrys-x5bkxm -> fe80:0:0:0:1:5bff:fe85:dce%bond0
+rkdev-i5xvn8-dtxfkx -> fe80:0:0:0:91:4ff:fe5f:6467%bond0
+rkdev-i62ype-m89tta -> fe80:0:0:0:91:4ff:fefb:5246%bond0
+rkdev-i6ii34-he15zc -> fe80:0:0:0:1:5aff:fe89:4f11%bond0
+rkdev-i9ffgg-ghudrq -> fe80:0:0:0:1:5bff:fee5:5ebc%bond0
+rkdev-iaaatg-hjmd3f -> fe80:0:0:0:1:5bff:feaf:fc8%bond0
+rkdev-idrjsy-rorqa6 -> fe80:0:0:0:91:4ff:feb6:1f57%bond0
+rkdev-ievg3h-bn2v2s -> fe80:0:0:0:1:5aff:fe43:8587%bond0
+rkdev-iezk8i-jyia0n -> fe80:0:0:0:91:30ff:fefe:8789%bond0
+rkdev-if22yk-q9w9s6 -> fe80:0:0:0:91:30ff:fec2:1598%bond0
+rkdev-ifxych-y14q6v -> fe80:0:0:0:91:30ff:fe6b:ff6%bond0
+rkdev-ig9d0j-fo61gm -> fe80:0:0:0:1:63ff:fe1c:39e%bond0
+rkdev-ikfjzi-5o8kt9 -> fe80:0:0:0:91:4ff:fe3b:9a3d%bond0
+rkdev-ilg38f-a9zzia -> fe80:0:0:0:91:30ff:fe2c:2052%bond0
+rkdev-ilu7f0-ebhdn3 -> fe80:0:0:0:1:63ff:feef:d3cb%bond0
+rkdev-ilvo04-wuofs9 -> fe80:0:0:0:91:4ff:fe11:fcc%bond0
+rkdev-imm67y-4fyb5t -> fe80:0:0:0:1:5aff:fe32:ca1d%bond0
+rkdev-ip68q6-ysvv1c -> fe80:0:0:0:91:30ff:fef1:2f12%bond0
+rkdev-irxeun-i34bes -> fe80:0:0:0:1:63ff:fe3f:5513%bond0
+rkdev-ite6cf-l3xnv8 -> fe80:0:0:0:91:4ff:fee7:cc4c%bond0
+rkdev-iu049g-6dz1kn -> fe80:0:0:0:1:5aff:fed3:b746%bond0
+rkdev-iue0o2-mknliw -> fe80:0:0:0:91:4ff:fe5e:ef18%bond0
+rkdev-ivu1mc-3kdvuk -> fe80:0:0:0:1:5bff:fe0a:6233%bond0
+rkdev-iy91ko-4k9zoo -> fe80:0:0:0:1:63ff:fe25:e2d4%bond0
+rkdev-iz26p6-hm89on -> fe80:0:0:0:91:4ff:fe33:71d0%bond0
+rkdev-j1fooe-cwczcw -> fe80:0:0:0:91:30ff:fe99:43ad%bond0
+rkdev-j203hp-87txdw -> fe80:0:0:0:1:63ff:fe95:7cab%bond0
+rkdev-j52sdc-btwp66 -> fe80:0:0:0:91:4ff:fe58:97b6%bond0
+rkdev-j6bc07-ibwjqn -> fe80:0:0:0:1:63ff:fe15:2d71%bond0
+rkdev-j6u8pt-jrsu1c -> fe80:0:0:0:91:4ff:fefc:4fad%bond0
+rkdev-j6xpkx-axfh2w -> fe80:0:0:0:91:30ff:fe11:2f2f%bond0
+rkdev-j736wu-xnkt27 -> fe80:0:0:0:91:30ff:fee9:e2fc%bond0
+rkdev-j9dp51-n5ij73 -> fe80:0:0:0:1:5bff:fec4:adb7%bond0
+rkdev-j9itpt-t0ar3m -> fe80:0:0:0:91:4ff:fea9:2e95%bond0
+rkdev-jamrtn-2o006j -> fe80:0:0:0:91:30ff:fe6d:4ba8%bond0
+rkdev-jd11hr-tsjes6 -> fe80:0:0:0:1:5aff:fe4b:6358%bond0
+rkdev-jhezhc-f1vpfu -> fe80:0:0:0:91:30ff:feda:1333%bond0
+rkdev-jhye1x-r3q6hr -> fe80:0:0:0:91:4ff:fed5:e007%bond0
+rkdev-ji22cg-dd1l7e -> fe80:0:0:0:1:5aff:febe:3695%bond0
+rkdev-ji9m3h-wyalpa -> fe80:0:0:0:1:5aff:fe02:bc18%bond0
+rkdev-jpt8sc-2c5k90 -> fe80:0:0:0:91:30ff:feb4:4397%bond0
+rkdev-jpwmng-c4d9eq -> fe80:0:0:0:1:5bff:fecb:fde6%bond0
+rkdev-jq1809-jv0doy -> fe80:0:0:0:1:5aff:fe17:d3e1%bond0
+rkdev-jqv0nf-tz28vw -> fe80:0:0:0:91:30ff:fea3:5bf3%bond0
+rkdev-ju198j-ad8lh9 -> fe80:0:0:0:1:63ff:fe67:5182%bond0
+rkdev-ju7s6q-eb4owh -> fe80:0:0:0:1:5bff:feb0:75ff%bond0
+rkdev-jvceo1-uwgvxa -> fe80:0:0:0:1:5bff:feb8:9463%bond0
+rkdev-k04nj9-5e0ff1 -> fe80:0:0:0:1:63ff:feb8:702a%bond0
+rkdev-k18esj-s19501 -> fe80:0:0:0:1:63ff:fece:dc15%bond0
+rkdev-k8ugpg-c6lhgi -> fe80:0:0:0:91:4ff:fe8b:26eb%bond0
+rkdev-kaf51c-peipm4 -> fe80:0:0:0:1:5aff:fe81:5f18%bond0
+rkdev-kbaas9-v1w73e -> fe80:0:0:0:1:63ff:fe8a:d162%bond0
+rkdev-kdfn72-1oafk9 -> fe80:0:0:0:1:5aff:fe07:bad1%bond0
+rkdev-kgzjlr-0tx4fg -> fe80:0:0:0:91:30ff:fe2e:4ac0%bond0
+rkdev-knp91m-8wdcth -> fe80:0:0:0:1:63ff:fe19:f641%bond0
+rkdev-kpgbl7-svm74m -> fe80:0:0:0:1:63ff:fe0b:30c0%bond0
+rkdev-kv8v36-0yruhs -> fe80:0:0:0:91:30ff:fea5:4e72%bond0
+rkdev-kz6o1u-n4rz7m -> fe80:0:0:0:1:5aff:fe55:961e%bond0
+rkdev-l4zx12-iy6500 -> fe80:0:0:0:1:63ff:fee4:435a%bond0
+rkdev-l6d2px-b9ez50 -> fe80:0:0:0:1:5bff:fed6:3029%bond0
+rkdev-l6q8lz-6c77kr -> fe80:0:0:0:91:30ff:fe52:a52f%bond0
+rkdev-l7yuz3-1g2i3j -> fe80:0:0:0:91:30ff:fe69:caa%bond0
+rkdev-l8jx6n-u09zcg -> fe80:0:0:0:91:4ff:fe5b:4365%bond0
+rkdev-l9fotq-em26me -> fe80:0:0:0:91:4ff:fe89:991c%bond0
+rkdev-l9lsx8-lznis4 -> fe80:0:0:0:1:63ff:fe2c:e32%bond0
+rkdev-l9malv-mu6nt6 -> fe80:0:0:0:1:5aff:fee5:3f94%bond0
+rkdev-lefh16-iugxtl -> fe80:0:0:0:91:30ff:feb1:b12b%bond0
+rkdev-lehbtz-cw9yii -> fe80:0:0:0:91:30ff:fef0:cfd2%bond0
+rkdev-liekc6-tp9656 -> fe80:0:0:0:1:63ff:fe7e:5380%bond0
+rkdev-llohhi-w7ktkz -> fe80:0:0:0:1:63ff:fee9:1d79%bond0
+rkdev-llxze0-b2wfhk -> fe80:0:0:0:91:4ff:fe54:f114%bond0
+rkdev-lnm4jz-raoaf1 -> fe80:0:0:0:91:4ff:fe7d:ecc2%bond0
+rkdev-lq4q43-cuwlyg -> fe80:0:0:0:91:30ff:fe28:3e4e%bond0
+rkdev-lqrs9s-t4wt76 -> fe80:0:0:0:91:4ff:fe86:e4ed%bond0
+rkdev-lsyuwg-aue9k3 -> fe80:0:0:0:91:4ff:fe85:b333%bond0
+rkdev-lu1sux-2zsr74 -> fe80:0:0:0:1:63ff:fe2b:8709%bond0
+rkdev-lwgmqk-rv7nps -> fe80:0:0:0:1:63ff:fef8:e225%bond0
+rkdev-lzg67p-9qxx7e -> fe80:0:0:0:1:5aff:fe53:3c8d%bond0
+rkdev-lzotz4-k0rw32 -> fe80:0:0:0:91:30ff:fe85:36a6%bond0
+rkdev-m1sk26-y0gnas -> fe80:0:0:0:1:63ff:fe74:c9ab%bond0
+rkdev-m2gsbb-vwwqd9 -> fe80:0:0:0:91:4ff:fe73:7ef9%bond0
+rkdev-m32bsu-ur65cg -> fe80:0:0:0:91:30ff:fe4a:fa96%bond0
+rkdev-m5op2l-dk207k -> fe80:0:0:0:1:63ff:fe4d:7187%bond0
+rkdev-m82b3w-bepcr7 -> fe80:0:0:0:91:4ff:fed6:aa27%bond0
+rkdev-malse0-do3evf -> fe80:0:0:0:91:4ff:fe5a:ed14%bond0
+rkdev-maub54-0cb77u -> fe80:0:0:0:91:4ff:fe5e:de68%bond0
+rkdev-mb38vb-60hxzj -> fe80:0:0:0:91:30ff:fea5:381f%bond0
+rkdev-mc0i15-kph4ba -> fe80:0:0:0:91:30ff:fe36:58b5%bond0
+rkdev-mchqt8-rg8srr -> fe80:0:0:0:91:4ff:fe62:5aaa%bond0
+rkdev-mdp5b5-qeww4o -> fe80:0:0:0:91:4ff:fe32:e32f%bond0
+rkdev-me5mbn-3mvr6z -> fe80:0:0:0:91:30ff:fede:7109%bond0
+rkdev-mf25fb-ynblwd -> fe80:0:0:0:91:30ff:fee8:b816%bond0
+rkdev-mf77hc-5r9y21 -> fe80:0:0:0:91:4ff:fe9c:93b2%bond0
+rkdev-mgjpby-p0x6dj -> fe80:0:0:0:91:30ff:feeb:8434%bond0
+rkdev-mhwzm9-jmio8t -> fe80:0:0:0:1:5aff:fe50:264d%bond0
+rkdev-mie338-8slho8 -> fe80:0:0:0:91:4ff:fe76:d645%bond0
+rkdev-mmtsed-fl5wnp -> fe80:0:0:0:1:63ff:feef:c753%bond0
+rkdev-mnel9k-xr8e2g -> fe80:0:0:0:91:30ff:fe53:5236%bond0
+rkdev-mok3cf-cprofi -> fe80:0:0:0:91:30ff:fe08:1538%bond0
+rkdev-mp79hy-kvrssf -> fe80:0:0:0:1:5bff:fe35:c766%bond0
+rkdev-mp7vrb-p81dha -> fe80:0:0:0:1:5aff:fe38:416%bond0
+rkdev-mpi60u-g95ehu -> fe80:0:0:0:91:4ff:fe28:e173%bond0
+rkdev-mps0em-0jt5xe -> fe80:0:0:0:1:5aff:fe5a:b800%bond0
+rkdev-mqwowd-ui0wkw -> fe80:0:0:0:1:5aff:fe11:2cc8%bond0
+rkdev-mrvu0q-3nqoi3 -> fe80:0:0:0:1:63ff:feb9:f0f6%bond0
+rkdev-ms36x1-ycvxez -> fe80:0:0:0:1:63ff:fea4:fcaa%bond0
+rkdev-mx78re-q6i6pf -> fe80:0:0:0:1:5aff:fe82:69f2%bond0
+rkdev-my3i7c-zpb4t5 -> fe80:0:0:0:1:63ff:fe07:e0be%bond0
+rkdev-n0mzx3-8hx8uh -> fe80:0:0:0:91:30ff:fed7:b271%bond0
+rkdev-n14gz6-bsvrcy -> fe80:0:0:0:1:5aff:fed9:ad58%bond0
+rkdev-n3nrd8-xc9fa0 -> fe80:0:0:0:91:4ff:fe2e:458c%bond0
+rkdev-n5nbbw-443xu3 -> fe80:0:0:0:1:5bff:fe2b:78ec%bond0
+rkdev-na1337-ct930f -> fe80:0:0:0:1:63ff:fece:77f%bond0
+rkdev-naz0on-2rmov3 -> fe80:0:0:0:1:5aff:fec4:eac3%bond0
+rkdev-nb1q7n-388976 -> fe80:0:0:0:1:63ff:fed7:1a6%bond0
+rkdev-ncs61h-veopw7 -> fe80:0:0:0:1:5aff:fe18:cccc%bond0
+rkdev-nd5e96-0t5mhy -> fe80:0:0:0:91:4ff:fe28:f052%bond0
+rkdev-ndi13e-q07u8p -> fe80:0:0:0:91:30ff:fe7e:f9f1%bond0
+rkdev-nkk5r3-tsw8x8 -> fe80:0:0:0:91:30ff:fedb:f47a%bond0
+rkdev-nn186a-xjnjwe -> fe80:0:0:0:1:5bff:fe1b:54bc%bond0
+rkdev-nnwfm2-eyzw8v -> fe80:0:0:0:1:63ff:fe73:2706%bond0
+rkdev-nqpx6g-d3ty4x -> fe80:0:0:0:1:63ff:fe66:5b5c%bond0
+rkdev-nqzcnu-uiiaxb -> fe80:0:0:0:1:5aff:feb6:468e%bond0
+rkdev-nr3670-zg96im -> fe80:0:0:0:91:30ff:fea8:3b97%bond0
+rkdev-nrgg3e-f6obap -> fe80:0:0:0:1:5aff:fe12:6138%bond0
+rkdev-nrzxwg-x4ygpn -> fe80:0:0:0:91:30ff:febc:f100%bond0
+rkdev-nshrf8-xa4pbg -> fe80:0:0:0:1:5bff:fe7f:baa2%bond0
+rkdev-nu8mng-h1j0mu -> fe80:0:0:0:1:63ff:fef5:789b%bond0
+rkdev-nvcofu-t5135d -> fe80:0:0:0:91:4ff:fee8:749c%bond0
+rkdev-nwfcxd-y8iazp -> fe80:0:0:0:1:5bff:fecb:e066%bond0
+rkdev-nxqk06-ntxwyb -> fe80:0:0:0:91:4ff:fed0:4fd6%bond0
+rkdev-nyshvy-g2cv41 -> fe80:0:0:0:1:5bff:fed5:6c70%bond0
+rkdev-nyzr6w-6tk445 -> fe80:0:0:0:91:4ff:fe3e:a5ca%bond0
+rkdev-nz053g-sbisy8 -> fe80:0:0:0:1:63ff:fec8:834b%bond0
+rkdev-o0ym73-cejbi3 -> fe80:0:0:0:91:30ff:fe3f:d438%bond0
+rkdev-o2ty9p-ga2a99 -> fe80:0:0:0:91:4ff:fecc:3693%bond0
+rkdev-o33s3o-0c3hny -> fe80:0:0:0:1:5aff:fe56:d6ab%bond0
+rkdev-o4psjw-bna75x -> fe80:0:0:0:1:5bff:fecc:182d%bond0
+rkdev-o55oaj-d4zufp -> fe80:0:0:0:91:30ff:fed0:5f3e%bond0
+rkdev-o6f5vp-goq0bg -> fe80:0:0:0:1:5bff:fe87:2dc3%bond0
+rkdev-o8edtv-4nwanp -> fe80:0:0:0:91:30ff:fef6:1e85%bond0
+rkdev-o8yicj-vzflo4 -> fe80:0:0:0:91:4ff:feca:6aa%bond0
+rkdev-o9dn0i-qiz431 -> fe80:0:0:0:91:30ff:fe7c:6193%bond0
+rkdev-o9f18i-ulugqw -> fe80:0:0:0:1:63ff:fef5:b2f7%bond0
+rkdev-o9ivwo-q8g2he -> fe80:0:0:0:91:4ff:fef9:a1e8%bond0
+rkdev-oab211-hvz9is -> fe80:0:0:0:91:4ff:feb1:41dd%bond0
+rkdev-od9ko5-nn6hl1 -> fe80:0:0:0:91:4ff:fe6b:4796%bond0
+rkdev-oeiba6-4s2dr5 -> fe80:0:0:0:1:63ff:fe93:1718%bond0
+rkdev-ojk59t-5oais1 -> fe80:0:0:0:91:30ff:fef9:c830%bond0
+rkdev-om0q7r-qergvu -> fe80:0:0:0:1:5aff:feed:6a26%bond0
+rkdev-oncv72-8bgmkg -> fe80:0:0:0:1:63ff:feeb:d723%bond0
+rkdev-oniaxh-z3qe6x -> fe80:0:0:0:1:5aff:fef3:b577%bond0
+rkdev-oogght-ln9b7k -> fe80:0:0:0:91:4ff:fecc:1c4f%bond0
+rkdev-opbiii-fxptl0 -> fe80:0:0:0:1:5bff:feac:fca5%bond0
+rkdev-oqpddu-ttbw42 -> fe80:0:0:0:1:5aff:febd:d6a7%bond0
+rkdev-oqrvu7-122rii -> fe80:0:0:0:1:63ff:feef:afba%bond0
+rkdev-osebbk-fjn88k -> fe80:0:0:0:1:5aff:fe2a:351%bond0
+rkdev-ovdqin-w5semj -> fe80:0:0:0:1:5bff:fed1:b5cd%bond0
+rkdev-ow77gp-5nibhy -> fe80:0:0:0:1:5aff:fe4b:ed43%bond0
+rkdev-oyqkm5-9infv1 -> fe80:0:0:0:91:30ff:fead:baa3%bond0
+rkdev-ozj5nq-fobxvk -> fe80:0:0:0:1:5bff:fe9a:ba78%bond0
+rkdev-p31isb-o9klni -> fe80:0:0:0:91:30ff:fe8e:355%bond0
+rkdev-p5g1h4-su2k03 -> fe80:0:0:0:1:5aff:fec0:aac2%bond0
+rkdev-p5r9wf-cawvix -> fe80:0:0:0:91:4ff:fed8:d702%bond0
+rkdev-p86qob-vfyppq -> fe80:0:0:0:91:30ff:fe28:492a%bond0
+rkdev-pbrcg3-i3rzay -> fe80:0:0:0:91:30ff:fedf:bc38%bond0
+rkdev-pcacom-t70vmg -> fe80:0:0:0:91:4ff:fec4:c23b%bond0
+rkdev-pe3z2v-iqz4vk -> fe80:0:0:0:91:4ff:fe2f:c1f6%bond0
+rkdev-pkqq0a-0ts2cg -> fe80:0:0:0:1:5bff:fe86:3a55%bond0
+rkdev-pm93fq-ajl78d -> fe80:0:0:0:1:63ff:feb7:e0df%bond0
+rkdev-pmrv3v-hirpck -> fe80:0:0:0:91:4ff:fed8:b970%bond0
+rkdev-pnsf92-twe8p8 -> fe80:0:0:0:91:30ff:fe16:4a51%bond0
+rkdev-po0rjm-59ijf0 -> fe80:0:0:0:1:5aff:fe07:1c82%bond0
+rkdev-po9q2w-rqzx68 -> fe80:0:0:0:1:5bff:fe75:adad%bond0
+rkdev-pr80jo-zmfd9g -> fe80:0:0:0:91:30ff:fe25:14e4%bond0
+rkdev-ps3h8r-maup2i -> fe80:0:0:0:91:30ff:fe59:8a7e%bond0
+rkdev-psl8v2-c9mi1x -> fe80:0:0:0:1:5aff:feb6:1a36%bond0
+rkdev-puslir-ivf0kn -> fe80:0:0:0:91:30ff:fea0:4252%bond0
+rkdev-pw40up-2mt8c8 -> fe80:0:0:0:91:4ff:fe5f:99a7%bond0
+rkdev-pwidwr-eyxzvz -> fe80:0:0:0:91:30ff:fe2d:446b%bond0
+rkdev-px6q1i-ogjlnp -> fe80:0:0:0:1:63ff:febd:65fc%bond0
+rkdev-px7a1t-n4l1gj -> fe80:0:0:0:91:4ff:fe1e:16bd%bond0
+rkdev-pzokxw-svkn92 -> fe80:0:0:0:91:30ff:fe2a:1391%bond0
+rkdev-pzwozg-jjd8j9 -> fe80:0:0:0:1:5aff:fe72:da38%bond0
+rkdev-q1zj7w-60azyl -> fe80:0:0:0:91:4ff:feee:348b%bond0
+rkdev-q2x3mn-k74daf -> fe80:0:0:0:1:5bff:fee7:588%bond0
+rkdev-q3ev5e-g5xgd7 -> fe80:0:0:0:1:63ff:fe89:bcee%bond0
+rkdev-q5v7lc-ozc8zs -> fe80:0:0:0:1:63ff:fedf:6e3e%bond0
+rkdev-q9a8yt-5iy3ss -> fe80:0:0:0:91:4ff:fe63:daef%bond0
+rkdev-qaumza-b1emk8 -> fe80:0:0:0:91:4ff:fefa:91ed%bond0
+rkdev-qaz1x7-dwwa4a -> fe80:0:0:0:91:30ff:fed7:8b35%bond0
+rkdev-qfv4fs-6m1rh6 -> fe80:0:0:0:91:30ff:fe30:8fac%bond0
+rkdev-qjh46d-zjd8sv -> fe80:0:0:0:91:30ff:fe5f:6b45%bond0
+rkdev-qlk6rc-jj2hmy -> fe80:0:0:0:91:30ff:fe10:e695%bond0
+rkdev-qlkgxg-gvarmv -> fe80:0:0:0:91:4ff:fe82:1eee%bond0
+rkdev-qnobtk-n8zy8t -> fe80:0:0:0:1:5aff:fee2:151c%bond0
+rkdev-qogyd6-cn5i8o -> fe80:0:0:0:1:63ff:fe09:9c3a%bond0
+rkdev-qop2m9-r4566j -> fe80:0:0:0:1:5aff:fec1:99e4%bond0
+rkdev-qpd685-lakh4q -> fe80:0:0:0:1:5aff:fe92:634e%bond0
+rkdev-qs6zz3-8ks5a3 -> fe80:0:0:0:1:63ff:fe7a:c975%bond0
+rkdev-qvubv8-bu1pvf -> fe80:0:0:0:1:5aff:fe90:f0e2%bond0
+rkdev-qwcx0q-jzzrzw -> fe80:0:0:0:91:4ff:fe10:1aad%bond0
+rkdev-qxw2dq-sutwrv -> fe80:0:0:0:1:63ff:fe77:2928%bond0
+rkdev-qzclzk-3yj2fs -> fe80:0:0:0:91:4ff:feca:a6f9%bond0
+rkdev-r20gp2-0ui3j7 -> fe80:0:0:0:1:63ff:fead:5f8d%bond0
+rkdev-r3753u-vr1pts -> fe80:0:0:0:1:63ff:fefa:d1af%bond0
+rkdev-r3we3r-bgswyb -> fe80:0:0:0:1:5bff:fe51:4460%bond0
+rkdev-r40rrw-6tlgl4 -> fe80:0:0:0:91:4ff:fe77:c53a%bond0
+rkdev-r447ec-fnu74r -> fe80:0:0:0:91:4ff:fe36:d534%bond0
+rkdev-r4sig8-uacb2r -> fe80:0:0:0:91:30ff:fe1c:d734%bond0
+rkdev-r6bapa-bn6khz -> fe80:0:0:0:1:5bff:fe71:1def%bond0
+rkdev-r82yt2-37kq1n -> fe80:0:0:0:1:63ff:fe3e:79c6%bond0
+rkdev-r8puri-14t00y -> fe80:0:0:0:1:63ff:fe60:9963%bond0
+rkdev-r90ojj-84y8ml -> fe80:0:0:0:91:30ff:fe05:ffe2%bond0
+rkdev-rb2fq6-h5plaj -> fe80:0:0:0:1:5aff:fe6a:69bb%bond0
+rkdev-rcjli9-opr3vx -> fe80:0:0:0:91:30ff:fe17:a70e%bond0
+rkdev-rckdgf-kpabhh -> fe80:0:0:0:1:5aff:feb4:87b1%bond0
+rkdev-re8tsi-mh6eja -> fe80:0:0:0:91:4ff:fe39:7bdf%bond0
+rkdev-rfnxgo-cd6a89 -> fe80:0:0:0:1:5aff:fe95:a081%bond0
+rkdev-ria1gc-pwc00x -> fe80:0:0:0:1:5bff:fef0:3378%bond0
+rkdev-riaekk-eoy0rr -> fe80:0:0:0:91:4ff:fe20:2395%bond0
+rkdev-rjyqmf-j4supi -> fe80:0:0:0:91:4ff:fefc:abb1%bond0
+rkdev-rm7rw6-wg280s -> fe80:0:0:0:1:5bff:fe61:93df%bond0
+rkdev-rpwhws-gj9h7v -> fe80:0:0:0:91:30ff:fe15:4ec9%bond0
+rkdev-rq5kev-lqyoxc -> fe80:0:0:0:1:5bff:fe03:977b%bond0
+rkdev-rrjhi1-wmap82 -> fe80:0:0:0:1:5bff:fe72:69a1%bond0
+rkdev-rxbshw-cawd8q -> fe80:0:0:0:1:5aff:fee6:9efa%bond0
+rkdev-rz68t4-q6dtnm -> fe80:0:0:0:91:30ff:fe2c:4408%bond0
+rkdev-s0ae19-leil2k -> fe80:0:0:0:1:5aff:fecf:c06b%bond0
+rkdev-s1wswk-2haf0g -> fe80:0:0:0:91:30ff:fe34:9f44%bond0
+rkdev-s2xzbq-7yj46l -> fe80:0:0:0:1:63ff:fe8d:561d%bond0
+rkdev-s5s60v-anzdje -> fe80:0:0:0:91:30ff:fe3f:a270%bond0
+rkdev-s8lgkw-8c9a2b -> fe80:0:0:0:1:63ff:fe55:782b%bond0
+rkdev-sab8i8-aaoh09 -> fe80:0:0:0:1:5aff:fef6:6174%bond0
+rkdev-safrjq-2t3wnh -> fe80:0:0:0:1:63ff:fe02:7b19%bond0
+rkdev-sg21ir-wnaxtk -> fe80:0:0:0:1:63ff:fe96:bab0%bond0
+rkdev-sidh57-0p58nt -> fe80:0:0:0:1:5aff:fe82:a02d%bond0
+rkdev-sjk4hh-67h1eo -> fe80:0:0:0:1:63ff:fe4d:5a3b%bond0
+rkdev-sjuwya-2fj0a1 -> fe80:0:0:0:1:5bff:fec9:4e7%bond0
+rkdev-slalia-sdgpmg -> fe80:0:0:0:91:4ff:fec4:a28a%bond0
+rkdev-son3qc-zgw3g0 -> fe80:0:0:0:91:30ff:fe58:58a0%bond0
+rkdev-sqwk9p-v343e5 -> fe80:0:0:0:1:63ff:fecf:9d87%bond0
+rkdev-st00ow-tqm5ep -> fe80:0:0:0:1:5aff:fee3:3651%bond0
+rkdev-svzzsn-l4ob9i -> fe80:0:0:0:91:30ff:fe1d:8d4c%bond0
+rkdev-swwuun-tb1z6a -> fe80:0:0:0:91:4ff:fe31:bd56%bond0
+rkdev-syoxem-r8td0u -> fe80:0:0:0:1:63ff:fe46:f8ee%bond0
+rkdev-szrltf-vu2hhe -> fe80:0:0:0:91:4ff:fe9a:bd6%bond0
+rkdev-szyg3p-u75sl6 -> fe80:0:0:0:1:63ff:fe53:783b%bond0
+rkdev-t0uezq-50ut2u -> fe80:0:0:0:91:30ff:fe0e:6911%bond0
+rkdev-t0uqzz-2wk3zh -> fe80:0:0:0:1:63ff:fe72:e405%bond0
+rkdev-t43k2y-k6ai9o -> fe80:0:0:0:1:5bff:fefc:b5cd%bond0
+rkdev-t58nzu-yg6etp -> fe80:0:0:0:1:5bff:fe92:6a77%bond0
+rkdev-t5erby-hsqjxh -> fe80:0:0:0:91:4ff:fe51:5e21%bond0
+rkdev-t5t72k-1df9o8 -> fe80:0:0:0:1:63ff:fea6:5d49%bond0
+rkdev-t7stmh-vcyvpt -> fe80:0:0:0:91:30ff:fe8d:894%bond0
+rkdev-t9q79h-z9qtov -> fe80:0:0:0:1:5aff:fefd:da26%bond0
+rkdev-tf5dl9-zt02am -> fe80:0:0:0:91:30ff:fe30:f6b1%bond0
+rkdev-tf7ehz-myrck6 -> fe80:0:0:0:1:5aff:fe8c:8a19%bond0
+rkdev-thtg5b-vucc1z -> fe80:0:0:0:91:4ff:fee1:4f33%bond0
+rkdev-tmzerw-og3s02 -> fe80:0:0:0:1:5bff:fe23:ef8%bond0
+rkdev-to66hq-u8h70l -> fe80:0:0:0:1:63ff:fe0f:ab1f%bond0
+rkdev-tpq7yw-ppeqqp -> fe80:0:0:0:1:5aff:fe7c:d048%bond0
+rkdev-tpw9g0-f96zbz -> fe80:0:0:0:1:5bff:fef0:43bf%bond0
+rkdev-tqyfzd-qlr4h8 -> fe80:0:0:0:1:5bff:fee8:6986%bond0
+rkdev-trgf27-fp6xt3 -> fe80:0:0:0:1:63ff:fef3:935a%bond0
+rkdev-ts98m9-j69fq3 -> fe80:0:0:0:1:5aff:fe0f:f9ea%bond0
+rkdev-tu0vjr-f164hk -> fe80:0:0:0:1:5aff:fe58:7421%bond0
+rkdev-tu5vmm-qfwkbr -> fe80:0:0:0:91:30ff:fe60:95a1%bond0
+rkdev-tvjm6x-ml3yjz -> fe80:0:0:0:91:30ff:fef9:2a75%bond0
+rkdev-tw4p9e-m7ysbm -> fe80:0:0:0:91:4ff:fef5:589b%bond0
+rkdev-txsqh8-bokyd1 -> fe80:0:0:0:91:4ff:fed7:ffca%bond0
+rkdev-u06d9d-2nyugr -> fe80:0:0:0:1:63ff:fe70:a57e%bond0
+rkdev-u1vgw0-ntateg -> fe80:0:0:0:1:63ff:fefb:16f6%bond0
+rkdev-u21cd0-7fylo9 -> fe80:0:0:0:91:30ff:fe02:e476%bond0
+rkdev-u4pw9l-num0rf -> fe80:0:0:0:1:63ff:feff:e8b%bond0
+rkdev-u60xxz-mtu61d -> fe80:0:0:0:1:5aff:fe4b:50d6%bond0
+rkdev-u7ecbb-ok1rlv -> fe80:0:0:0:1:5bff:fe91:abc7%bond0
+rkdev-u7n3zi-jb96or -> fe80:0:0:0:91:30ff:fe17:5f45%bond0
+rkdev-u7rwq0-zkjfk6 -> fe80:0:0:0:91:30ff:fe3a:f5d7%bond0
+rkdev-ubegov-98sbgo -> fe80:0:0:0:1:63ff:fe01:5d85%bond0
+rkdev-ubhkj5-pb89ql -> fe80:0:0:0:91:30ff:fe78:cc85%bond0
+rkdev-uhajc1-su4z48 -> fe80:0:0:0:1:63ff:fe8b:920e%bond0
+rkdev-ui6m82-4gcgtf -> fe80:0:0:0:1:5aff:febe:13a3%bond0
+rkdev-ulgc5c-o7m5es -> fe80:0:0:0:1:63ff:fe74:49f2%bond0
+rkdev-ulpd2k-rbmcco -> fe80:0:0:0:1:63ff:feab:3681%bond0
+rkdev-umbwwv-au37ff -> fe80:0:0:0:1:63ff:fe73:2e38%bond0
+rkdev-umdym7-f8q4rz -> fe80:0:0:0:91:30ff:fea2:d82c%bond0
+rkdev-umstt9-jp7u0j -> fe80:0:0:0:1:5aff:feaa:3e09%bond0
+rkdev-undtdb-t37h25 -> fe80:0:0:0:91:4ff:fe2a:f2ec%bond0
+rkdev-uoko2r-hwzrzo -> fe80:0:0:0:91:30ff:fe83:44%bond0
+rkdev-upf5u3-2aeu30 -> fe80:0:0:0:91:4ff:fe28:5f1b%bond0
+rkdev-uq32yp-kgplep -> fe80:0:0:0:1:5bff:fe85:3730%bond0
+rkdev-uvlm21-k6ad35 -> fe80:0:0:0:1:63ff:fe29:931a%bond0
+rkdev-uw2o2j-ih9csb -> fe80:0:0:0:91:30ff:fed0:62b4%bond0
+rkdev-v2vtyg-13y7ly -> fe80:0:0:0:91:30ff:fe45:53c9%bond0
+rkdev-v34v95-gkrq9h -> fe80:0:0:0:91:30ff:fec2:46c3%bond0
+rkdev-v3dutu-0567yc -> fe80:0:0:0:1:63ff:fe8c:5ff4%bond0
+rkdev-v4w4wr-71gh2s -> fe80:0:0:0:1:63ff:fe54:9caf%bond0
+rkdev-v5yg93-yxm9rg -> fe80:0:0:0:91:30ff:fe07:1b6d%bond0
+rkdev-v7sn7z-1f2nex -> fe80:0:0:0:1:5bff:fefd:8f8b%bond0
+rkdev-vccdjg-oq8x41 -> fe80:0:0:0:1:63ff:fee4:594d%bond0
+rkdev-vdm8zi-bttwlg -> fe80:0:0:0:91:30ff:fe13:7b79%bond0
+rkdev-vewu2j-xih2zd -> fe80:0:0:0:1:5bff:feec:3677%bond0
+rkdev-vgewjf-142szg -> fe80:0:0:0:1:5bff:fe27:f8a0%bond0
+rkdev-vik1j8-748pyy -> fe80:0:0:0:1:5aff:feb0:9dc1%bond0
+rkdev-vl0xvh-i6pyad -> fe80:0:0:0:91:30ff:fea7:315a%bond0
+rkdev-vmpr1g-51e38h -> fe80:0:0:0:1:5bff:fedf:175%bond0
+rkdev-vnc0p8-gdl2ab -> fe80:0:0:0:91:30ff:feb6:5179%bond0
+rkdev-vnli4p-rs1a65 -> fe80:0:0:0:91:30ff:fe05:831a%bond0
+rkdev-vpma0g-h099ws -> fe80:0:0:0:1:63ff:feee:4339%bond0
+rkdev-vq2uwd-rkjdmm -> fe80:0:0:0:1:63ff:fe93:94c1%bond0
+rkdev-vqlhxt-d6y5g3 -> fe80:0:0:0:91:30ff:feae:c1fd%bond0
+rkdev-vu4hve-mmh2os -> fe80:0:0:0:91:30ff:fe91:a4d6%bond0
+rkdev-vvkb3h-vm1ya7 -> fe80:0:0:0:91:30ff:fe66:d813%bond0
+rkdev-vzaj28-120rwj -> fe80:0:0:0:91:30ff:febe:ddef%bond0
+rkdev-w0dmrn-7gof7p -> fe80:0:0:0:91:30ff:febc:8064%bond0
+rkdev-w0hz8a-lvjuh1 -> fe80:0:0:0:91:4ff:fecf:b05b%bond0
+rkdev-w21hku-7d1a86 -> fe80:0:0:0:91:4ff:fe43:4950%bond0
+rkdev-w23jpl-gn9tq6 -> fe80:0:0:0:91:4ff:fedd:766c%bond0
+rkdev-w3rj78-3fh1ud -> fe80:0:0:0:1:5aff:fe31:f616%bond0
+rkdev-w7gm4o-o57j4r -> fe80:0:0:0:1:63ff:fece:479d%bond0
+rkdev-wbh0b7-lzikq6 -> fe80:0:0:0:91:30ff:fe53:219f%bond0
+rkdev-wbjmmt-s03soe -> fe80:0:0:0:1:63ff:fece:b985%bond0
+rkdev-wefu4f-08qe1q -> fe80:0:0:0:1:63ff:fe10:af1c%bond0
+rkdev-wfaaif-05gezv -> fe80:0:0:0:1:63ff:fe1e:676b%bond0
+rkdev-wfldaj-jdlsxf -> fe80:0:0:0:91:4ff:fef1:4912%bond0
+rkdev-wfnorg-ulului -> fe80:0:0:0:1:5bff:fe10:972e%bond0
+rkdev-whp6at-e7lkzj -> fe80:0:0:0:1:5bff:fe6f:1b58%bond0
+rkdev-wihk74-s4ori9 -> fe80:0:0:0:91:30ff:fe27:f444%bond0
+rkdev-wj47zz-3iatya -> fe80:0:0:0:1:63ff:fe8f:9aa5%bond0
+rkdev-wn8dli-6pdhhx -> fe80:0:0:0:91:4ff:fec0:8697%bond0
+rkdev-wqnw05-kx2fcw -> fe80:0:0:0:1:63ff:feb3:a42f%bond0
+rkdev-wr4kta-i08qwl -> fe80:0:0:0:1:5bff:fef6:97f9%bond0
+rkdev-wsm7eu-l9zmta -> fe80:0:0:0:1:5bff:febb:843d%bond0
+rkdev-wv93es-v6woir -> fe80:0:0:0:91:4ff:fe05:a20e%bond0
+rkdev-wzbw9p-1vylod -> fe80:0:0:0:1:63ff:fee8:3d15%bond0
+rkdev-x07b1k-imc040 -> fe80:0:0:0:1:63ff:fe7b:dc87%bond0
+rkdev-x2zyb1-nkbrab -> fe80:0:0:0:1:5aff:fe5b:94a4%bond0
+rkdev-x314uz-r3mjmk -> fe80:0:0:0:91:30ff:fe78:4dae%bond0
+rkdev-x3l0xe-upep8l -> fe80:0:0:0:1:5aff:feda:74c6%bond0
+rkdev-x5jsdw-oc3xun -> fe80:0:0:0:1:63ff:fe50:c976%bond0
+rkdev-x5sbls-6e7hts -> fe80:0:0:0:1:63ff:fe8e:c40c%bond0
+rkdev-x6jact-8q2vw8 -> fe80:0:0:0:1:5bff:fea5:b132%bond0
+rkdev-x7fhxr-vc2rbg -> fe80:0:0:0:1:5aff:fee8:c596%bond0
+rkdev-x8av2a-qeemg1 -> fe80:0:0:0:91:4ff:fee2:c7df%bond0
+rkdev-x8w786-a0k8at -> fe80:0:0:0:1:5bff:fe59:224e%bond0
+rkdev-x9gg7r-5kbc4o -> fe80:0:0:0:1:5aff:fec0:df97%bond0
+rkdev-xaweql-sfrrh7 -> fe80:0:0:0:1:63ff:fe2c:de2c%bond0
+rkdev-xdhhgx-crpeun -> fe80:0:0:0:91:30ff:fe33:c997%bond0
+rkdev-xdrxiv-2f0bg6 -> fe80:0:0:0:1:63ff:fed2:95e9%bond0
+rkdev-xeymso-do84kt -> fe80:0:0:0:91:4ff:fe16:8478%bond0
+rkdev-xf81c8-m34e3x -> fe80:0:0:0:91:30ff:fe0f:aaa7%bond0
+rkdev-xfu1jk-layvxd -> fe80:0:0:0:1:63ff:fe8c:5ec9%bond0
+rkdev-xhlxay-75268f -> fe80:0:0:0:1:5aff:fe7d:82ec%bond0
+rkdev-xin2ah-g2sf5g -> fe80:0:0:0:91:30ff:feac:f3d4%bond0
+rkdev-xirmou-8oh9tw -> fe80:0:0:0:1:63ff:fe5f:73ee%bond0
+rkdev-xkov1w-lf8fn0 -> fe80:0:0:0:91:4ff:fe75:9ed0%bond0
+rkdev-xlngv0-28n7im -> fe80:0:0:0:1:63ff:fe6e:b621%bond0
+rkdev-xm6xdo-zhzu62 -> fe80:0:0:0:91:30ff:fecc:7052%bond0
+rkdev-xnml67-i9icv7 -> fe80:0:0:0:1:63ff:fee9:f9d7%bond0
+rkdev-xp297r-ohlgqf -> fe80:0:0:0:1:5bff:fe46:7367%bond0
+rkdev-xphlpf-93x5mw -> fe80:0:0:0:91:30ff:fe99:d08f%bond0
+rkdev-xudvsp-4g8yhm -> fe80:0:0:0:91:4ff:feeb:9b08%bond0
+rkdev-xvqixp-7buh2b -> fe80:0:0:0:1:63ff:fe9a:1781%bond0
+rkdev-xxipr6-ge5mgs -> fe80:0:0:0:1:63ff:fecc:dadf%bond0
+rkdev-xyjhrj-efy075 -> fe80:0:0:0:91:4ff:fe54:cf16%bond0
+rkdev-ybhb80-k5uxpq -> fe80:0:0:0:1:5aff:fe3b:2188%bond0
+rkdev-ybnsbq-w66iwr -> fe80:0:0:0:91:30ff:fea1:c904%bond0
+rkdev-yc04kz-6sfqou -> fe80:0:0:0:1:63ff:fe83:649b%bond0
+rkdev-yg44xt-r5uyxg -> fe80:0:0:0:1:5bff:fe15:80fe%bond0
+rkdev-yhlv6q-8id7vr -> fe80:0:0:0:1:63ff:fed0:efaf%bond0
+rkdev-yit4ml-dol3uc -> fe80:0:0:0:91:4ff:fee7:355a%bond0
+rkdev-yjmq6w-f2y05j -> fe80:0:0:0:1:5aff:fe72:b891%bond0
+rkdev-ylpv0w-csdd18 -> fe80:0:0:0:91:4ff:fe4f:4aa%bond0
+rkdev-ym1f2u-juio5j -> fe80:0:0:0:91:4ff:fef0:590a%bond0
+rkdev-ynyyvx-9nmrt1 -> fe80:0:0:0:91:4ff:fedd:99bb%bond0
+rkdev-yow2vt-3hg1mi -> fe80:0:0:0:91:4ff:fe3d:2e64%bond0
+rkdev-yruoce-7vf8lf -> fe80:0:0:0:91:4ff:feac:89b1%bond0
+rkdev-ytjjtv-twm614 -> fe80:0:0:0:1:5aff:fedc:4368%bond0
+rkdev-yu3516-l1gn5r -> fe80:0:0:0:1:5aff:fe44:b963%bond0
+rkdev-yxz7mx-f2kjdl -> fe80:0:0:0:1:5aff:fefc:97d8%bond0
+rkdev-yz195d-60h15m -> fe80:0:0:0:1:63ff:fea9:e09f%bond0
+rkdev-yz8ttk-lpe36d -> fe80:0:0:0:91:30ff:fec5:9ac2%bond0
+rkdev-z34moe-0j5qsz -> fe80:0:0:0:1:63ff:fe13:b402%bond0
+rkdev-z79vb7-iev10s -> fe80:0:0:0:1:63ff:fe2d:a69f%bond0
+rkdev-z7pks1-q1x3rq -> fe80:0:0:0:1:63ff:feb2:f1af%bond0
+rkdev-z8t3a7-ymqjj7 -> fe80:0:0:0:91:4ff:fe48:4f22%bond0
+rkdev-z9xjsa-koqbsi -> fe80:0:0:0:91:4ff:fe89:2022%bond0
+rkdev-zb626r-h4809k -> fe80:0:0:0:1:5aff:fee7:d9df%bond0
+rkdev-zc5s02-485026 -> fe80:0:0:0:91:30ff:fe48:7786%bond0
+rkdev-zhm2ic-i6hhei -> fe80:0:0:0:1:5aff:fea4:b28d%bond0
+rkdev-zhn95k-1389xo -> fe80:0:0:0:1:63ff:fe68:e93b%bond0
+rkdev-zhopfr-43c8ti -> fe80:0:0:0:1:5aff:fe46:7cd2%bond0
+rkdev-zhseay-jvk5c0 -> fe80:0:0:0:1:63ff:fef4:f087%bond0
+rkdev-zii4px-f5sa03 -> fe80:0:0:0:1:63ff:fea3:6fcb%bond0
+rkdev-zillyi-mb5cw4 -> fe80:0:0:0:91:30ff:fe9d:132c%bond0
+rkdev-zj2vg8-q3qq4u -> fe80:0:0:0:91:4ff:fe50:bd8d%bond0
+rkdev-zjp3z1-eizv9f -> fe80:0:0:0:1:63ff:fe68:e84d%bond0
+rkdev-zpfb4n-i68nc0 -> fe80:0:0:0:1:5aff:fe72:c9c5%bond0
+rkdev-zsfkpy-5y7qln -> fe80:0:0:0:1:5bff:fe60:2e6%bond0
+rkdev-zsuuwg-wl3f0z -> fe80:0:0:0:1:5aff:fe1c:1c7c%bond0
+rkdev-ztobiw-0z6ez6 -> fe80:0:0:0:1:63ff:fef4:fdb6%bond0
+rkdev-zwglvp-lxopfy -> fe80:0:0:0:91:4ff:fed1:fcfe%bond0
+rkdev-zwsgoa-unun98 -> fe80:0:0:0:1:5bff:fe83:6dd3%bond0
+
+[2024-12-29 03:21:07,002] [PQ.platformQual] [DEBUG] -- Successfully connected to node after reset [1] - b-sjc-af-1003-lb.
+[2024-12-29 03:21:20,510] [PQ.platformQual] [DEBUG] -- Successfully tested PXE manufacturing process for the node [1] - b-sjc-af-1003-lb.
+
+
+
+	Welcome to Platform Qual testing.
+
+
+/usr/bin/python3
+3.6.9 (default, Mar 10 2023, 16:46:00) 
+[GCC 8.4.0]
+unable to complete the reset_node
+reboot started
+[2024-12-29 03:21:30,988] [PQ.platformQual] [DEBUG] -- Cluster YAML file 'cluster.yml' exists and read successfully.
+[2024-12-29 03:21:30,997] [PQ.platformQual] [DEBUG] -- Input YAML file 'input.yml' exists and read successfully.
+[2024-12-29 03:21:30,997] [PQ.platformQual] [DEBUG] -- Private key file 'pkey.pem' exists and read successfully.
+
+[2024-12-29 03:21:31,071] [PQ.platformQual] [DEBUG] -- Successfully connected to node [1] - b-sjc-af-1003-lb.
+[2024-12-29 03:21:31,071] [PQ.platformQual] [DEBUG] -- Trying 'sudo rm /var/lib/rubrik/hosts_to_ipv6_mapping'
+[2024-12-29 03:21:31,130] [PQ.platformQual] [DEBUG] -- Success!
+
+[2024-12-29 03:21:34,297] [PQ.platformQual] [DEBUG] -- Trying 'cluster mfg_status
+'
+[2024-12-29 03:21:37,610] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster mfg_status
+
+==========================
+Getting initial mfg status
+==========================
+Manufacture successfully completed
+on : 2024-12-27T10:42:16
+
+[2024-12-29 03:21:37,610] [PQ.platformQual] [DEBUG] -- Trying 'cluster version
+'
+[2024-12-29 03:21:40,875] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster version
+
+9.4-dev-28595
+
+[2024-12-29 03:21:40,875] [PQ.platformQual] [DEBUG] -- Trying 'cluster reset_node_status
+'
+[2024-12-29 03:21:44,173] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster reset_node_status
+
+=========================
+Getting reset_node status
+=========================
+Reset node exited or has not run yet
+
+[2024-12-29 03:21:44,173] [PQ.platformQual] [DEBUG] -- Trying 'cluster discover'
+[2024-12-29 04:44:18,426] [PQ.platformQual] [DEBUG] -- 
+
+b-sjc-af-1003-lb >> cluster discover
+Command execution failed with exception: 503 Server Error: Service Unavailable for url: https://localhost/api/internal/cluster/me/discover
+[2024-12-29 04:44:28,510] [PQ.platformQual] [DEBUG] -- Successfully connected to node after reset [1] - b-sjc-af-1003-lb.
+[2024-12-29 04:44:42,022] [PQ.platformQual] [DEBUG] -- Successfully tested PXE manufacturing process for the node [1] - b-sjc-af-1003-lb.
+
+
+
+	Welcome to Platform Qual testing.
+
+
+/usr/bin/python3
+3.6.9 (default, Mar 10 2023, 16:46:00) 
+[GCC 8.4.0]
+unable to complete the reset_node
+reboot started
