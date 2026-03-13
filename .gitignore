@@ -1,0 +1,8 @@
+_pycache__/
+*.pyc
+*.pem
+*.xlsx
+output.txt
+*.log
+.idea/
+.vscode/
