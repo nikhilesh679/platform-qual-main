@@ -1,0 +1,181 @@
+# Configuration for Rubrik tests.
+# The deployment being tested.
+#
+# Used for out-of-band operations to manage the test deployment itself. This
+# and testers below are the only configuration section with values that are
+# not visible to a customer.
+deployment:
+  cluster_sh: ../deployment/cluster.sh
+  inventory: mix-02_ipv6
+# Test workers.
+#
+# Used for managing test workers which simulate multiple concurrent actions
+# taken by the customer.
+test_workers:
+  inventory: ../deployment/ansible/localhost_inventory
+# All values below are meant to be defined by customers for their specific
+# environments.
+# Cluster definition.
+cluster:
+  name: c3
+  ntp_servers:
+  - ntp-1.net.rubrik.com
+  - ntp-2.net.rubrik.com
+  - ntp-3.net.rubrik.com
+  dns_nameservers:
+  - 10.1.253.53
+  - 10.1.253.140
+  - 10.1.253.141
+  dns_search_domains:
+  - rubrik-lab.com
+# Node definitions.
+#
+# When exercising cluster bootstrap, nodes matching the hostnames here will be
+# discovered, then configured into a cluster with the given IPv4
+# configurations.
+#
+# When exercising other pieces that assume cluster bootstrap has already
+# completed, these are the nodes and their properties that are expected to
+# exist, whether by exercising cluster bootstrap through acceptance test or
+# by configuring them some other way, such as manually. In particular, the
+# IPv4 addresses defined here (usually the first one) will be used for making
+# REST API calls.
+nodes:
+- hostname: RHPDL380GEN11PXMCC0JLMJ20RE
+  physical: true
+  # Replacing pxeserver with pxeserverip to remove host_vars dependency.
+  # devpxe-10-16-28-x's ip address is 10.16.28.15
+  pxeserverip: 10.1.44.4
+  pxe: true
+  ipmi:
+    address: 10.1.47.89
+    gateway: 10.1.44.1
+    netmask: 255.255.252.0
+    # Reserved DHCP Address.
+    # Check out deployment/ansible/host_vars/devpxe-10-16-28-x/main.yml
+    reserved_dhcp_address: 10.1.44.212
+    default_admin_user: Administrator
+  ipv4:
+    type: static
+    address: 10.0.76.172
+    netmask: 255.255.0.0
+    gateway: 10.0.0.255
+  mac_address_0: "b8:3f:d2:7e:aa:bf"
+  mac_address_1: "b8:3f:d2:7e:aa:be"
+  ipv6:
+    interface: bond0
+    address: "fe80::1623:f2ff:fe02:e3dd"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# vSphere configuration.
+
+# Defines the vSphere infrastructure to connect to and manage.
+#
+# NB: acceptance.py will only add the first vSphere to your cluster.
+vspheres:
+- hostname: testing-vcenter.colo.rubrik.com
+  port: 443
+  username: podmaker@rubrik-lab.com
+  password: Nm4aGOFygqMB1P4o
+    # Defines the host to mount VMs on.
+  mount_host:
+    name: esx-5-117.colo.rubrik.com
+    # Defines the datastore to export VMs on.
+  export_datastore:
+    name: esx-5-117_local_ssd
+# Protected VM configuration.
+#
+# Defines the primary VMs being protected. Find or create VMs that you own,
+# then get their vSphere names and guest info.
+#
+# Note: For data verification, one and only one of the following sections
+# need to be specified:
+#   ssh
+#   cifs
+#   odbc
+#   ldap
+#
+# NB: to pass acceptance, you must protect at least one VM from the first
+# vSphere listed above.
+data_sets:
+  # Files and filesystem metadata on Linux. Deliberately does not include
+  # highly dynamic paths such as /var because those will change whenever a VM
+  # boots up and so can't generally be validated against the snapshot.
+- id: linux_basic
+  filesystems:
+  - /dev/sda1
+  files:
+  - /bin
+  - /etc
+  - /home
+  - /lib
+  - /root
+  - /sbin
+  - /usr
+    # The file which is changing when each snapshot is taken. Be sure to
+    # include this in the list of files to validate.
+    #
+    # In the future we should have fancier workload simulation tools to change
+    # more files or application objects. For now, just doing something simple.
+  changing_file: /root/snapshot.txt
+    # Any specified files or files that are inside the specified directories
+    # are not included while calculating the data digest.
+  exclude_file_paths:
+  - /usr/lib/vmware-tools
+  - /etc/mtab
+  # Files on Windows. Deliberately does not include highly dynamic paths such as
+  # /Windows because those will change frequently and so can't generally be
+  # validated against the snapshot.
+- id: windows_basic
+  files:
+  - /Program Files
+  - /Program Files (x86)
+  - /Rubrik
+  changing_file: /Rubrik/snapshot.txt
+  # Tables to check on SQL Server database. Tests calculate MD5 digest for each
+  # row of the table, indexed by the unique_key.
+- id: sql_server
+  tables:
+  - name: sys.all_objects
+    unique_key: object_id
+  - name: msdb.dbo.syspolicy_policies
+    unique_key: policy_id
+  - name: msdb.dbo.syspolicy_conditions
+    unique_key: condition_id
+  - name: rktest
+    unique_key: timestamp
+    # A new row is added to this table for each snapshot taken.
+    # Be sure the include this table in the list of tables to validate.
+  changing_table: rktest
+# Default guest OS credentials (optional)
+#
+# Define the credentials that Rubrik may use to log on to the guest OS on
+# a VM, for example, to create a VSS consistent snapshot on a Windows VM.
+guest_credentials:
+- domain: .
+  username: administrator
+  password: scaledata!@34
+# These credentials are used to bootstrap a node,
+# since we've changed password requirements for admin users.
+bootstrap_credentials:
+  username: admin
+  email: rubrikpa@gmail.com
+  password: RubrikAdminPassword
+
+
