@@ -5,7 +5,7 @@ ipmi_pass:
 
 install_pass: rubrik
 
-pxe_mfg_build: http://cdm-builds.corp.rubrik.com/job/Build_CDM_Disk_Image_9.5/478/artifact/rubrik-image-9.5.0-p2-36016.tar.gz
+pxe_mfg_build: http://cdm-builds.corp.rubrik.com/job/Build_CDM_Disk_Image/16750/artifact/rubrik-image-9.6-dev-32126.tar.gz
 upgrade_dest: http://cdm-builds.corp.rubrik.com/job/Build_CDM_Disk_Image_9.4/1091/artifact/rubrik-image-9.4.3-31178.tar.gz
 add_node:
 - hostname: RDL6520G3HP2Q3CNWS300216006V

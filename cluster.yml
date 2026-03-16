@@ -43,34 +43,30 @@ cluster:
 nodes:
 
 
- 
-
-
-
-- hostname: RHPDL360PXAQA0ARHD322O
+- hostname: RC240WZP2530Z
   physical: true
-  pxe: true
-  pxeauth: true
+  # Replacing pxeserver with pxeserverip to remove host_vars dependency.
+  # devpxe-10-16-28-x's ip address is 10.16.28.15
   pxeserverip: 10.1.44.4
+  pxe: true
   ipmi:
-    address: 10.1.44.144
+    address: 10.1.44.27
     gateway: 10.1.44.1
-    netmask: 255.255.254.0
-#       Reserved DHCP Address.
-#       Check out deployment/ansible/host_vars/devpxe-10-16-29-x/main.yml
-    reserved_dhcp_address: 10.1.45.144
-    default_admin_user: Administrator
+    netmask: 255.255.252.0
+    # Reserved DHCP Address.
+    # Check out deployment/ansible/host_vars/devpxe-10-16-28-x/main.yml
+    reserved_dhcp_address: 10.1.44.228
+    default_admin_user: admin
   ipv4:
-    address: 10.0.115.64
-    gateway: 10.0.0.255
+    type: static
+    address: 10.0.211.45
     netmask: 255.255.0.0
-  mac_address_0: "48:df:37:b8:c2:34"
-  mac_address_1: "48:df:37:b8:c2:35"
+    gateway: 10.0.0.255
+  mac_address_0: "18:59:F5:24:06:38"
+  mac_address_1: "18:59:F5:24:06:39"
   ipv6:
     interface: bond0
-    address: fe80::4adf:37ff:fec5:00b8
- 
-
+    address: "fe80::1a59:f5ff:fe24:639"
 
 
 
