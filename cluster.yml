@@ -43,7 +43,7 @@ cluster:
 nodes:
 
 
-- hostname: RC240WZP2530Z
+- hostname: RZ
   physical: true
   # Replacing pxeserver with pxeserverip to remove host_vars dependency.
   # devpxe-10-16-28-x's ip address is 10.16.28.15
