@@ -70,7 +70,7 @@ nodes:
 
 
 
-# vSphere configuration.
+# VSphere configuration.
  
 # Defines the vSphere infrastructure to connect to and manage.
 #
