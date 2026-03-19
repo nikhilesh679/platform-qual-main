@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Copyright (c) 2021, HCL Technologies Ltd. All rights reserved.
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 """
 This module contains Rubrik Platform Qualification code
@@ -19,6 +19,7 @@ from tqdm import tqdm
 
 pp = pprint.PrettyPrinter(indent=2)
 
+
 class UpgradeCluster():
     """This class contains functions related to the CDM upgrade of a Rubrik Cluster.
 
@@ -33,26 +34,29 @@ class UpgradeCluster():
             transferred {int} -- Number of bytes that have been transferred.
             total {int} -- Total number of bytes to be transferred.
         """
-        
+
         # Return progress every 50 MB
-        if (transferred/(1024*1024)) % 50 != 0:
+        if (transferred / (1024 * 1024)) % 50 != 0:
             return
         pbar = tqdm(total=int(total), ascii=True, unit='iB', unit_scale=True)
         pbar.update(transferred)
-        print("\tTransferred: {:.3f} GB out of: {:.3f} GB".format(transferred/(1024*1024*1024), total/(1024*1024*1024)), end='\r')
-        
+        print("\tTransferred: {:.3f} GB out of: {:.3f} GB".format(transferred / (1024 * 1024 * 1024),
+                                                                  total / (1024 * 1024 * 1024)), end='\r')
+
     def tqdmWrapViewBar(*args, **kwargs):
         """This methids defines tqdm viewer and configures callback.
         """
 
         pbar = tqdm(*args, **kwargs)  # make a progressbar
         last = [0]  # last known iteration, start at 0
+
         def viewBar2(transferred, total):
-            if (transferred/(1024*1024)) % 50 != 0:
+            if (transferred / (1024 * 1024)) % 50 != 0:
                 pbar.total = int(total)
                 pbar.update(int(transferred - last[0]))  # update pbar with increment
                 # pbar.update(transferred)
                 last[0] = transferred  # update last known iteration
+
         return viewBar2, pbar  # return callback, tqdmInstance
 
     def copy_tarball(self, node, username, password, src):
@@ -65,18 +69,18 @@ class UpgradeCluster():
             src {str} -- Build URL of the desired version of tarball.
         """
 
-        if os.path.isfile('./'+src.split('/')[-1]):
-            os.remove('./'+src.split('/')[-1])
-        
+        if os.path.isfile('./' + src.split('/')[-1]):
+            os.remove('./' + src.split('/')[-1])
+
         # Staging
         # Download the tarball and sig file on localhost
         self.log("Staging: Downloading the tarball on localhost.")
-        if os.path.isfile('./'+src.split('/')[-1]):
+        if os.path.isfile('./' + src.split('/')[-1]):
             self.log("Staging: It's already present in the current directory.")
         else:
             response = requests.get(src, stream=True)
             tarball_total_bytes = int(response.headers.get('content-length', 0))
-            block_size = 50*1024*1024 #50 Megabyte
+            block_size = 50 * 1024 * 1024  # 50 Megabyte
             pbar = tqdm(total=tarball_total_bytes, unit='iB', unit_scale=True)
             with open(src.split('/')[-1], 'wb') as f:
                 for data in response.iter_content(block_size):
@@ -90,12 +94,12 @@ class UpgradeCluster():
 
         self.log("Staging: Downloading the sig file on localhost.")
         src = src + '.sig'
-        if os.path.isfile('./'+src.split('/')[-1]):
+        if os.path.isfile('./' + src.split('/')[-1]):
             self.log("Staging: It's already present in the current directory.")
         else:
             response = requests.get(src, stream=True)
             sig_total_bytes = int(response.headers.get('content-length', 0))
-            block_size = 1024 #1 Kilobyte
+            block_size = 1024  # 1 Kilobyte
             pbar = tqdm(total=sig_total_bytes, unit='iB', unit_scale=True)
             with open(src.split('/')[-1], 'wb') as f:
                 for data in response.iter_content(block_size):
@@ -120,7 +124,7 @@ class UpgradeCluster():
         files = sftp.listdir(path='upgrade/')
         if files:
             for file in files:
-                sftp.remove('upgrade/'+file)
+                sftp.remove('upgrade/' + file)
 
         # Transfer
         # Send the tarball and sig file to the node via SFTP
@@ -142,16 +146,16 @@ class UpgradeCluster():
         # Clear localhost
         # Delete the downloaded file from localhost
         self.log("Transfer: Deleteing the downloaded file(s), if any.")
-        if os.path.isfile('./'+src.split('/')[-1]):
-            os.remove('./'+src.split('/')[-1])
+        if os.path.isfile('./' + src.split('/')[-1]):
+            os.remove('./' + src.split('/')[-1])
         else:
-            raise ValueError("file {} is not a file or dir.".format('./'+src.split('/')[-1]))
-        
+            raise ValueError("file {} is not a file or dir.".format('./' + src.split('/')[-1]))
+
         src = src + '.sig'
-        if os.path.isfile('./'+src.split('/')[-1]):
-            os.remove('./'+src.split('/')[-1])
+        if os.path.isfile('./' + src.split('/')[-1]):
+            os.remove('./' + src.split('/')[-1])
         else:
-            raise ValueError("file {} is not a file or dir.".format('./'+src.split('/')[-1]))
+            raise ValueError("file {} is not a file or dir.".format('./' + src.split('/')[-1]))
         self.log("Transfer: Deleted the downloaded file(s), if any.")
         print("")
 
@@ -168,30 +172,33 @@ class UpgradeCluster():
         cluster = self.cluster
         cluster_name = cluster['cluster']['name']
 
-
-
-
         # Connect to the cluster
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.log("Trigger: Attempting to start the upgrade.")
         try:
-            ssh.connect(host, username = username, password = password)
+            ssh.connect(host, username=username, password=password)
         except:
             self.log("[!] Cannot connect to the cluster. Exiting...\n")
             return
         else:
             self.log("Sucessfully connected to the cluster {}.".format(cluster_name))
         self.log("Trying '{}'".format('cluster upgrade start'))
-        
+
         try:
             stdin, stdout, stderr = ssh.exec_command('cluster upgrade start')
+            time.sleep(2)
             stdin.write('yes\n')
+            stdin.flush()
+            time.sleep(2)
             stdin.write('y\n')
+            stdin.flush()
+            time.sleep(2)
             stdin.write('y\n')
+            stdin.flush()
         except BaseException as e:
             self.log("[i] Error: {}".format(e))
-        
+
         self.log("\n" + node['hostname'] + " >> cluster upgrade start" + "\n" + stdout.read().decode())
         # print('\n')
         err = stderr.read().decode()
@@ -209,7 +216,7 @@ class UpgradeCluster():
             password {str} -- Password for the given username.
             node {dict} -- Dictionary containing the node details with key-value structure as defined in the Rubrik's cluster YAML files.
         """
-        
+
         cluster = self.cluster
         cluster_name = cluster['cluster']['name']
 
@@ -218,29 +225,29 @@ class UpgradeCluster():
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.log("Monitor: Starting to monitor the upgrade.")
         try:
-            ssh.connect(host, username = username, password = password)
+            ssh.connect(host, username=username, password=password)
         except:
             self.log("[!] Cannot connect to the cluster. Exiting...\n")
             return
         else:
             self.log("Sucessfully connected to the cluster {}.".format(cluster_name))
         self.log("Trying '{}'".format('cluster upgrade status'))
-        
+
         count = 0
         # stdout, stderr = None, None
         while True:
             try:
-                _, stdout, stderr = ssh.exec_command('cluster upgrade status') # channel
+                _, stdout, stderr = ssh.exec_command('cluster upgrade status')  # channel
             except BaseException as e:
                 self.log("[i] Error: {}".format(e))
-            
+
             err = stderr.read().decode()
             if err:
                 self.log(err)
                 break
-            
+
             output = stdout.read().decode()
-            
+
             # print('\n')
             if "Current upgrade status: In progress" in output:
                 count += 1
@@ -262,7 +269,7 @@ class UpgradeCluster():
             else:
                 self.log("[i] Error:\n{}".format(output))
                 break
-            
+
             # time.sleep(30)
         ssh.close()
 
@@ -281,50 +288,52 @@ class UpgradeCluster():
         ip, node = self.check_bootstrap()
 
         if not ip:
-            self.log("[!] Error: Either the cluster is not bootstrapped, or there is some other error. Upgrade can't continue. Exiting...")
+            self.log(
+                "[!] Error: Either the cluster is not bootstrapped, or there is some other error. Upgrade can't continue. Exiting...")
             return
-        
+
         src = input['upgrade_dest']
         # print(ip)
         self.copy_tarball(ip, 'adminstaging', password, src)
         self.trigger_upgrade(ip, username, password, node)
         self.monitor_upgrade(ip, username, password, node)
 
-    def install(self,param=0):
+    def install(self, param=0):
         """This method will trigger the cluster install"""
 
         cluster = self.cluster
         input = self.input
 
-        src=input['upgrade_dest']
-        password=input['install_pass']
+        src = input['upgrade_dest']
+        password = input['install_pass']
 
         for node in cluster['nodes']:
             ip = node['ipv4']['address']
 
         self.copy_tarball(ip, 'adminstaging', password, src)
 
-        install_info_config={}
-        install_build=input['upgrade_dest']
+        install_info_config = {}
+        install_build = input['upgrade_dest']
 
         tarball_str = install_build.split('/')[-1]
         print(tarball_str)
 
-        install_info_config['tarball']=tarball_str
+        install_info_config['tarball'] = tarball_str
 
-        node_details=cluster['nodes']
+        node_details = cluster['nodes']
         for node in node_details:
-            install_info_config['hosts'] =[node['hostname']]
+            install_info_config['hosts'] = [node['hostname']]
 
-        install_info_config['preserveHdds']=False
+        install_info_config['preserveHdds'] = False
 
         print(install_info_config)
 
-        self.log("Attempting to trigger cluster install for {} node".format([node['hostname'] for node in node_details]))
+        self.log(
+            "Attempting to trigger cluster install for {} node".format([node['hostname'] for node in node_details]))
 
         url = 'https://' + ip + '/api' + '/internal' + '/cluster/me/install'
 
-        header = {'Content-Type': 'application/json','Accept': 'application/json'}
+        header = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
         try:
             response = requests.post(url, data=json.dumps(install_info_config), headers=header, verify=False, auth=None)
@@ -335,34 +344,36 @@ class UpgradeCluster():
             self.log("Install node: Connection refused.")
             raise Exception(err)
 
-        status= response.json()
+        status = response.json()
         self.log(status)
 
         if response.status_code != 202:
             self.log("[!] Failed with status code {}.".format(response.status_code))
             self.log("[!] FAILURE: {}".format(response.json()['message']))
             return
-        self.log("cluster Install triggered successfully on {} node".format([node['hostname'] for node in node_details]))
+        self.log(
+            "cluster Install triggered successfully on {} node".format([node['hostname'] for node in node_details]))
 
         time.sleep(30)
 
         id = status['id']
-    
+
         ipv6_addr = cluster['nodes'][0]['ipv6']['address']
         interface = cluster['nodes'][0]['ipv6']['interface']
-        
+
         pinging = subprocess.call("ping -c 1 {}".format(ipv6_addr),
-                    shell=True,
-                    stdout=open('/dev/null', 'w'),
-                    stderr=subprocess.STDOUT)
+                                  shell=True,
+                                  stdout=open('/dev/null', 'w'),
+                                  stderr=subprocess.STDOUT)
 
         if pinging:
-            url = 'https://[' + ipv6_addr + '%' + 'ens160]/api' + '/internal' + '/cluster/me/install' + '?' + 'request_id' + '=' + str(id)
+            url = 'https://[' + ipv6_addr + '%' + 'ens160]/api' + '/internal' + '/cluster/me/install' + '?' + 'request_id' + '=' + str(
+                id)
             header = {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Host': '[' + ipv6_addr + ']'
-                    }
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Host': '[' + ipv6_addr + ']'
+            }
             while True:
                 try:
                     response = requests.get(url, verify=False, headers=header, auth=None)
@@ -371,14 +382,14 @@ class UpgradeCluster():
                 except requests.exceptions.ConnectionError as err:
                     self.log("reboot is happening.")
                     time.sleep(700)
-                
+
 
                 finally:
                     response = requests.get(url, verify=False, headers=header, auth=None)
 
-                status=response.json()
+                status = response.json()
                 self.log(status)
-            
+
                 if status['status'] == 'IN_PROGRESS':
                     self.log("Install is happening: {}".format(status['message']))
                     time.sleep(300)
@@ -395,6 +406,6 @@ class UpgradeCluster():
                     break
 
             self.log("Install completed successfully for the node {}".format(node['hostname']))
-            
+
         else:
             self.log("IPV6 is pinging.")
