@@ -71,6 +71,7 @@ nodes:
 
 
 # VSphere configuration.
+# O
 # Ok
 # trigger 
 # Defines the vSphere infrastructure to connect to and manage.
