@@ -71,7 +71,7 @@ nodes:
 
 
 # VSphere configuration.
- 
+#trigger 
 # Defines the vSphere infrastructure to connect to and manage.
 #
 # NB: acceptance.py will only add the first vSphere to your cluster.
