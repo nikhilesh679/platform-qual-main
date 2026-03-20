@@ -60,12 +60,7 @@ nodes:
     address: 10.0.62.132
     netmask: 255.255.0.0
     gateway: 10.0.0.255
-  mac_address_0: "40:a6:b7:8d:35:04"
-  mac_address_1: "40:a6:b7:8d:35:05"
-  ipv6:
-    interface: bond0
-    address: "fe80::42a6:b7ff:fe8d:3505"
-
+  mac_address_0: 
 
 
 
