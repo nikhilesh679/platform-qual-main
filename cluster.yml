@@ -35,6 +35,7 @@ cluster:
 # configurations.
 #
 # Ok
+# Test 2
 # When exercising other pieces that assume cluster bootstrap has already
 # completed, these are the nodes and their properties that are expected to
 # exist, whether by exercising cluster bootstrap through acceptance test or
